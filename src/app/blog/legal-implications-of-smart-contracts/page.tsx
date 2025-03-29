@@ -143,7 +143,7 @@ const LegalImplicationsOfSmartContracts = () => {
         <section className="text-justify">
           <h2 className="text-2xl font-semibold mb-4">Conclusion</h2>
           <p>
-            Smart contracts represent a significant advancement in technology,
+            Smart contract represent a significant advancement in technology,
             offering numerous benefits while introducing complex legal
             challenges. For law students, understanding the legal implications
             of smart contracts is essential for navigating this evolving
