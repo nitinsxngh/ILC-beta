@@ -8,6 +8,7 @@ export function Footer() {
 
     const links = [
         { label: "Courses", url: "/courses" },
+        { label: "Blogs", url: "/blog" },
         { label: "Terms of Service", url: "/terms-of-services" },
         { label: "Terms and Conditions", url: "/terms-and-conditions" },
         { label: "Privacy Policy", url: "/privacy" },
