@@ -4,33 +4,51 @@ import Founder from '@/components/Founder/Founder'; // Import the Founder compon
 const teamMembers = [
   {
     name: "Shreya Chopra",
-    role: "Founder | MD", // Correctly escaped ampersand
+    role: "Founder | MD",
     photo: "/assets/teachers/shreya-chopra-crop.jpeg",
     description: "Shreya Chopra is holding B.Com (Hon.) LL.B. graduation degree , Masters in Corporate Law , and currently pursuing Doctorate of Philosophy in Legal Real Estate frauds . Worked as Legal Executive in Real Estate Regulatory Authority and as an Assistant Professor too. Apart from Academics she has been crowned as Miss India 2017 from Glammonn and been the Social Voice for the campaign 'Beti Bachao Beti Padhao' along with being the Brand Ambassador for Bharat Scouts and Guides . Spoken and Stood for legal rights for 'Betiyan' on national News Channels like C.N.B.C. , ZEE Hindustan , Mh1 etc. And Awarded 42 Government Awards for Educating them , Visiting them and Supporting them in their Legal Rights.",
-  },
-  {
-    name: "Susrith Godavarthi",
-    role: "IT Team | Social Media", // Correctly escaped ampersand
-    photo: "/assets/teachers/Susrith-Godavarthi.jpeg",
-    description: "Susrith godavarthi is a skilled Machine Learning Engineer with a strong drive for transforming data into meaningful, actionable insights. Known for tackling complex challenges, Susrith leverages advanced technologies to design innovative solutions that push the boundaries of what’s possible. Beyond his professional pursuits, Susrith has a passion for travel and cultural exploration, enriching his creativity and bringing a fresh perspective to his work. He is enthusiastic about connecting with others and sharing his journey in the world of Integrated Legal Circle (ILC), where he aims to make a significant impact in the intersection of technology and legal advancement.",
-  },
-  {
-    name: "Suvigya Tiwari",
-    role: "AI | IPR", // Correctly escaped ampersand
-    photo: "/assets/teachers/suvigya.jpg",
-    description: "Suvigya is an expert at the intersection of artificial intelligence (AI) and intellectual property rights (IPR). With a strong understanding of both AI technologies and legal frameworks, Suvigya helps businesses protect their innovations, ensuring compliance with patent, copyright, and trademark laws. Suvigya’s expertise enables organizations to navigate the complexities of IPR in the rapidly evolving AI space.",
   },
   {
     name: "Kaushaki Kumari",
     role: "Legal Researcher | Education Head",
     photo: "/assets/teachers/Kaushaki-Kumari.jpg",
-    description: "Kaushaki Kumari, a distinguished law graduate with a Bachelor of Laws (BA LLB) degree, combines academic excellence, practical expertise, and innovative leadership in the legal field. As an active member of her university’s Moot Court Committee, she contributed to fostering critical legal skills among peers and advancing legal education. With hands-on experience at reputed organizations like AIHRA and Tulja Estates, she specializes in corporate law, legal research, and strategic case preparation. Recognized for her impactful publications and process optimization initiatives, Kaushaki’s ability to navigate complex legal challenges with precision distinguishes her as a forward-thinking legal professional.",
+    description: "Kaushaki Kumari, a distinguished law graduate with a Bachelor of Laws (BA LLB) degree, combines academic excellence, practical expertise, and innovative leadership in the legal field. As an active member of her university's Moot Court Committee, she contributed to fostering critical legal skills among peers and advancing legal education. With hands-on experience at reputed organizations like AIHRA and Tulja Estates, she specializes in corporate law, legal research, and strategic case preparation. Recognized for her impactful publications and process optimization initiatives, Kaushaki's ability to navigate complex legal challenges with precision distinguishes her as a forward-thinking legal professional.",
   },
   {
-    name: "Ankit Kumar",
-    role: "Project Manager",
-    photo: "/assets/teachers/Ankit-Kumar.jpg",
-    description: "Ankit Kumar possesses a strong interest in Contract Drafting, Intellectual Property Law, Arbitration, Corporate Law, and Company Law. Backed by a solid foundation of academic knowledge and practical experience, he offers insightful legal analysis and strategic support in these domains. Driven by a passion for excellence in the legal field, he is committed to enhancing his expertise and making a meaningful impact through his contributions.", // Correctly escaped single quote
+    name: "Suvigya Tiwari",
+    role: "AI | IPR",
+    photo: "/assets/teachers/suvigya.jpg",
+    description: "Suvigya is an expert at the intersection of artificial intelligence (AI), intellectual property rights (IPR), and strategic innovation management. With a deep understanding of AI technologies and legal frameworks, he helps businesses protect their innovations while ensuring compliance with patent, copyright, and trademark laws. Suvigya's ability to navigate the complexities of IPR in the evolving AI landscape is complemented by his experience in overseeing digital initiatives, aligning technology with business goals, and driving impactful solutions.",
+  },
+  {
+    name: "Prateek Tripathi",
+    role: "Sales & Marketing",
+    photo: "/assets/teachers/prateek.png", // Add actual photo path
+    description: "Prateek is a dynamic sales and marketing expert with a strong foundation in technology and business growth. An MCA graduate, he plays a pivotal role in driving ILC's expansion by enhancing visibility, onboarding key stakeholders, and building lasting relationships. As a former HVCO President and an impactful orator, Prateek brings both leadership and persuasion to the table, ensuring impactful engagement. Beyond business, his commitment to social causes reflects his dedication to creating meaningful change for the community.",
+  },
+  {
+    name: "Divyansh Singh",
+    role: "Paralegal Lead | Relationship Manager",
+    photo: "/assets/teachers/divyansh.jpeg", // Add actual photo path
+    description: "Divyansh Singh is a 3rd Year-law student at Faculty of Law, University of Lucknow. He has been an excellent scholar during his school time as well as is a great performer in his law school. He has a valuable art of negotiation and is a keen learner of law. He has some exceptional skills in the field of law and is a certified legal drafter along with a certification in the field of Trademark Law. He has been featured in the APN News network and is leading the paralegal department at ILC.",
+  },
+  {
+    name: "Sidhart Sharma",
+    role: "Business Development Executive",
+    photo: "/assets/teachers/sidhart.jpeg", // Add actual photo path
+    description: "Sidhart is a dynamic Business Development Executive with a B.Tech background, bringing a strategic approach to client relationships and external partnerships. With a strong focus on growth and collaboration, he plays a key role in expanding our network and creating meaningful business opportunities. His problem-solving mindset and commitment to excellence help drive innovation and long-term success for the organization.",
+  },
+  {
+    name: "Chandamita Nath",
+    role: "Research & Education",
+    photo: "/assets/teachers/chanamita.jpeg", // Add actual photo path
+    description: "Chandamita Nath is a PhD Researcher in Social Sciences. She completed her BA from Delhi University and MA in Public Administration from Jamia Millia Islamia University. With over seven years of experience as an educator, she has taught students, competitive exam aspirants, and young children at the primary level. She has worked with several NGOs and the Delhi University Women's Association, contributing to social initiatives and mentoring programs. Over the past five years, she has been actively involved in mentoring underprivileged students through NGOs in Delhi and has also worked as an e-learning educator.",
+  },
+  {
+    name: "Sanchi Gupta",
+    role: "Legal Expert",
+    photo: "/assets/teachers/sanchi.png", // Add actual photo path
+    description: "Sanchi Gupta-Advocate of Punjab and Haryana High Court is a passionate and dedicated legal professional with a strong commitment to justice, ethics and advocacy. She earned BBA-LL.B (Hons.) degree from GD Goenka University, Gurgaon (Specialized in corporate laws and IPR Laws). Then pursued LLM from IILM Gurgaon in the field of corporate and commercial laws. After completing her legal education, she embarked on her legal career joined her legal practice in Karnal Courts now practicing in High court. She has authored two books titled as Interface Between Cyber Crimes And Intellectual Property Rights and Role Of Sebi In Indian Capital Market.",
   }
 ];
 
