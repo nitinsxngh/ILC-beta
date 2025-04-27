@@ -15,7 +15,6 @@ export function Footer() {
         { title: "Our Schools", items: ["IAIC", "IFC", "IMC", "IDC", "ILC", "IEC"] },
         { title: "What We Provide?", items: ["Practical Courses", "Library", "HR Recruitment", "Seminars & Conferences", "Internship Opportunities"] },
         { title: "Study Abroad", items: ["Australia", "Europe", "Canada", "USA", "Counselling", "Accommodation", "Visa Services"] },
-        { title: "Tools By ILC", items: ["AI Powered", "Study Companion", "Resume Builder", "Integrated Portal", "Networking Directory for Candidates"] },
         { title: "Build Connections With", items: ["MNCs", "Universities", "Professionals", "Professors", "Student Pool"] },
     ];
 
