@@ -41,7 +41,8 @@ const About = () => {
         transition={{ duration: 0.5 }}
         className='flex flex-col text-justify text-base md:text-xl leading-[1.8] max-w-4xl md:leading-[2] text-gray-300'
       >
-        Integrated Learning Circle (ILC) is a dynamic startup empowering the legal community through connections and comprehensive resources. We offer online and offline legal training, certified courses, and access to specialized expertise. Our mission is to bridge the gap between academic education and practical application by connecting professionals, companies, universities, and MNCs. Through this integrated approach, we equip individuals with the skills and knowledge to thrive in today’s competitive legal landscape.
+        At ILC, we are revolutionizing education by prioritizing practical training over theoretical learning. Our platform serves as a lifetime support system for students, guiding them from their first year of education through PhD and beyond. We believe in bridging the gap between academic knowledge and industry expectations, ensuring students gain real-world exposure through internships, professional training, and mentorship opportunities.
+        Beyond students, we extend our services to professors, educational institutions, and industry experts, offering a fully integrated support system that includes e-libraries, study abroad assistance, career counseling, HR services, and faculty mobility programs. Whether it is securing an internship, finding the right job, or hiring trained professionals at a lower HR cost, we are here to help!
       </motion.div>
     </div>
   );

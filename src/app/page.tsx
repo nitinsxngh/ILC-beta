@@ -6,7 +6,6 @@ import Reports from "@/components/Reports";
 import LenisScroll from '@/components/ui/LenisScroll';
 import Works from "@/components/Works";
 import Testimonial from "@/components/Testimonial";
-import Map from "@/components/Map";
 import Steps from "@/components/Steps";
 import Abroad from "@/components/Abroad";
 
@@ -24,7 +23,6 @@ export default function Home() {
       <Abroad />
       <Steps />
       <Testimonial />
-      <Map />
     </main>
   );
 }

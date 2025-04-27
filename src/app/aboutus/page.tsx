@@ -69,40 +69,24 @@ const AboutUs = () => {
 
         <div className="max-w-4xl mx-auto space-y-8">
           <section>
-            <h2 className="text-3xl font-semibold text-[#a47c38] mb-4 tracking-wide">Who We Are</h2>
+            <h2 className="text-3xl font-semibold text-[#a47c38] mb-4 tracking-wide">Who Are We</h2>
             <p className="text-lg leading-relaxed text-gray-300">
-              Integrated Legal Circle ILC is a dynamic startup committed to empowering the legal
-              community by fostering connections and providing comprehensive resources. We offer a
-              robust platform encompassing both online and offline legal training, certified
-              courses, and access to specialized legal expertise. Our core mission is to bridge the
-              critical gap between academic legal education and practical application in the
-              professional world. We achieve this by facilitating meaningful connections between
-              skilled professionals, leading companies, universities, and multinational
-              corporations MNCs. Through our integrated approach, we empower individuals with the
-              essential skills and knowledge necessary to not only survive but thrive in todays
-              competitive legal landscape.
+            At ILC, we are revolutionizing education by prioritizing practical training over theoretical learning.
+            Our platform serves as a lifetime support system for students, guiding them from their first year of education through PhD and beyond.
+            We believe in bridging the gap between academic knowledge and industry expectations, ensuring students gain real-world exposure through internships,
+            professional training, and mentorship opportunities.
+            Beyond students, we extend our services to professors, educational institutions, and industry experts, offering a fully integrated support system that includes e-libraries,
+            study abroad assistance, career counseling, HR services, and faculty mobility programs. Whether it is securing an internship, finding the right job, or hiring trained professionals at a lower HR cost, we are here to help!
             </p>
           </section>
 
           <section>
-            <h2 className="text-3xl font-semibold text-[#a47c38] mb-4 tracking-wide">Our Vision</h2>
+            <h2 className="text-3xl font-semibold text-[#a47c38] mb-4 tracking-wide">Our Vision & Our Mission</h2>
             <p className="text-lg leading-relaxed text-gray-300">
-              We envision a future where all legal professionals, regardless of their background,
-              have access to the resources and support they need to reach their full potential. We
-              strive to create a platform that cultivates highly skilled, well-prepared individuals
-              and seamlessly connects them with rewarding career opportunities through targeted value
-              enhancement programs.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-3xl font-semibold text-[#a47c38] mb-4 tracking-wide">Our Mission</h2>
-            <p className="text-lg leading-relaxed text-gray-300">
-              Our mission is to empower aspiring and established legal professionals by bridging the
-              gap between theoretical knowledge and practical expertise. We achieve this through
-              value-driven training, mentorship, and networking opportunities that provide both
-              learning and earning potential. We are dedicated to fostering a community of skilled
-              individuals who are prepared to excel in their legal careers.
+            Our mission is to bridge the gap between academic learning and real-world applications by providing students with practical training,
+            career guidance, and lifelong support from their first year to PhD. We aim to empower educators, industry experts,
+            and institutions by facilitating seamless access to internships, job opportunities, study abroad assistance, HR solutions,
+            and professional networking, creating a sustainable and industry-relevant education ecosystem for all.
             </p>
           </section>
 

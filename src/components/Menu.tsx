@@ -1,9 +1,19 @@
+'use client';  // Mark this as a Client Component
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Header from './CanvasMenu';
+import { usePathname } from 'next/navigation'; // Import hook
 
 const Menu = () => {
+  const pathname = usePathname(); // Get current path
+
+  // If you are on "/courses" page, don't render the menu
+  if (pathname === "/courses") {
+    return null;
+  }
+
   return (
     <div className="flex justify-between items-center w-full fixed z-50 px-6 md:px-12 py-4 md:py-6 bg-transparent">
       {/* Logo with Link to Home */}

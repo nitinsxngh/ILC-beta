@@ -11,7 +11,7 @@ const testimonials = [
 
 export default function InfiniteTestimonial() {
   return (
-    <div className="relative w-full overflow-hidden py-10 bg-gray-900">
+    <div className="relative w-full overflow-hidden py-10 bg-black">
       <div className="flex items-center space-x-6 animate-scroll w-max">
         {[...testimonials, ...testimonials].map((testimonial, index) => (
           <div

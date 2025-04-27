@@ -2,8 +2,8 @@
 export const gridItems = [
     {
         id: 1,
-        title: "Integrated Legal Circle",
-        description: "Empowering legal professionals with expert guidance, training, and networking opportunities to excel in the legal industry.",
+        title: "Integrated Learning Circle",
+        description: "Empowering legal professionals with expert guidance, training, and networking opportunities to excel different industries like Legal, AI, Engenieering, Management and Finance",
         className: "lg:col-span-3 md:col-span-6 md:row-span-4 h-[80vh] lg:min-h-[60vh] md:min-h-[calc(50vw)]",
         imgClassName: "w-full h-full",
         titleClassName: "justify-end",
@@ -26,7 +26,7 @@ export const gridItems = [
         id: 3,
         title: "Integrated Engineering Circle",
         description: "Connecting engineers with cutting-edge advancements, skill development, and industry-specific expertise for career growth.",
-        className: "lg:col-span-2 md:col-span-3 md:row-span-2",
+        className: "lg:col-span-2 md:col-span-3 md:row-span-2 w-full",
         imgClassName: "",
         titleClassName: "justify-center",
         descriptionClassName: "max-w-[50vw] md:max-w-sm",
@@ -52,7 +52,7 @@ export const gridItems = [
         imgClassName: "absolute right-0 bottom-0 md:top-0 md:w-[30vw] w-[50vw]",
         titleClassName: "justify-end",
         descriptionClassName: "max-w-xs md:max-w-sm",
-        img: "",
+        img: "/ai.png",
         spareImg: "/grid.svg",
     },
     {
@@ -66,7 +66,17 @@ export const gridItems = [
         img: "/grid.svg",
         spareImg: "/b4.svg",
     },
-    
+    {
+        id: 8,
+        title: "Integrated Legal Circle",
+        description: "Empowering legal professionals with expert guidance, training, and networking opportunities to excel in the legal industry.",
+        className: "lg:col-span-2 md:col-span-3 md:row-span-2 h-[30vh] md:h-full",
+        imgClassName: "",
+        titleClassName: "justify-start",
+        descriptionClassName: "max-w-sm",
+        img: "",
+        spareImg: "/grid.svg",
+    },
     {
         id: 7,
         title: "Want to get started?",
