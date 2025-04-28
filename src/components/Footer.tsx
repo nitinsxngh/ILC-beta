@@ -15,6 +15,7 @@ export function Footer() {
         { title: "Our Schools", items: ["IAIC", "IFC", "IMC", "IDC", "ILC", "IEC"] },
         { title: "What We Provide?", items: ["Practical Courses", "Library", "HR Recruitment", "Seminars & Conferences", "Internship Opportunities"] },
         { title: "Study Abroad", items: ["Australia", "Europe", "Canada", "USA", "Counselling", "Accommodation", "Visa Services"] },
+        { title: "Tools By ILC", items: ["AI Powered", "Study Companion", "Resume Builder", "Integrated Portal", "Networking Directory for Candidates"] },
         { title: "Build Connections With", items: ["MNCs", "Universities", "Professionals", "Professors", "Student Pool"] },
     ];
 
@@ -26,7 +27,7 @@ export function Footer() {
     ];
 
     return (
-        <footer className="flex relative flex-col container py-12 h-screen justify-evenly">
+        <footer className="flex relative flex-col container py-12 justify-evenly">
             {/* Main columns section */}
             <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
                 {columns.map((column, index) => (
