@@ -1,14 +1,33 @@
 'use client';  // Mark this as a Client Component
 
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Header from './CanvasMenu';
 import { usePathname } from 'next/navigation'; // Import hook
-import { links } from './CanvasMenu/Nav/data'; // Import navigation links
+import { mainLinks, dropdownLinks } from './CanvasMenu/Nav/data'; // Import navigation links
 
 const Menu = () => {
   const pathname = usePathname(); // Get current path
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    }
+
+    if (isDropdownOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isDropdownOpen]);
 
   return (
     <div className="flex justify-between items-center w-full fixed z-50 px-6 md:px-12 py-4 md:py-6 bg-transparent">
@@ -25,26 +44,11 @@ const Menu = () => {
         </Link>
       </div>
       
-      {/* Desktop Navigation - All links visible on desktop */}
+      {/* Desktop Navigation - Main links and dropdown */}
       <div className="hidden lg:flex items-center space-x-6">
-        {/* All Navigation Links */}
-        {links.map((link, index) => {
+        {/* Main Navigation Links */}
+        {mainLinks.map((link, index) => {
           const isExternal = link.href.startsWith('http');
-          const isGetStarted = link.title === 'Login/Signup';
-          
-          if (isGetStarted) {
-            return (
-              <a
-                key={index}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg font-semibold transition-colors duration-300 text-sm"
-              >
-                {link.title}
-              </a>
-            );
-          }
           
           return (
             <Link
@@ -59,6 +63,52 @@ const Menu = () => {
             </Link>
           );
         })}
+
+        {/* Dropdown Menu */}
+        <div className="relative" ref={dropdownRef}>
+          <button
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className="text-white hover:text-yellow-400 transition-colors duration-300 text-sm font-medium flex items-center"
+          >
+            More
+            <svg
+              className={`ml-1 w-4 h-4 transition-transform duration-200 ${
+                isDropdownOpen ? 'rotate-180' : ''
+              }`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          {/* Dropdown Content */}
+          {isDropdownOpen && (
+            <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50">
+              {dropdownLinks.map((link, index) => (
+                <Link
+                  key={index}
+                  href={link.href}
+                  className="block px-4 py-2 text-gray-800 hover:bg-yellow-50 hover:text-yellow-600 transition-colors duration-200 text-sm"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  {link.title}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Login/Signup Button */}
+        <a
+          href="https://explore.ilc.limited/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg font-semibold transition-colors duration-300 text-sm"
+        >
+          Login/Signup
+        </a>
       </div>
 
       {/* Hamburger Menu - Only visible on mobile */}

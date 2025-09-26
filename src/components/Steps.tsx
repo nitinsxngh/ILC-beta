@@ -4,12 +4,11 @@ import { motion } from "framer-motion";
 
 export default function Steps() {
   const steps = [
-    { id: 1, title: "Assessment", desc: "Aptitude Test & Interview" },
-    { id: 2, title: "Practice", desc: "Hands-on Practice, Scenarios & Test Cases" },
-    { id: 3, title: "Soft Skills", desc: "Business Training & Communication" },
-    { id: 4, title: "Assessments", desc: "Daily, Weekly & Monthly Tests" },
-    { id: 5, title: "Hackathons", desc: "Real-Time Project Challenges" },
-    { id: 6, title: "Guidance", desc: "Assessment, Monitoring & Final Evaluation" },
+    { id: 1, title: "Psychometric Test", desc: "Psychometric Test to Know Yourself" },
+    { id: 2, title: "CV Design", desc: "Get your CV Designed and Verified" },
+    { id: 3, title: "Hands-on Experience", desc: "Hands on Experience with our Experts Through Our Experiential Learning" },
+    { id: 4, title: "Academic Ecosystem", desc: "Academic Ecosystem" },
+    { id: 5, title: "Professional Networking", desc: "Professional Networking" },
   ];
 
   return (
@@ -20,7 +19,7 @@ export default function Steps() {
       </div>
 
       {/* Steps Container */}
-      <div className="flex flex-col lg:flex-row justify-center items-center space-y-8 lg:space-y-0 lg:space-x-8">
+      <div className="flex flex-col lg:flex-row justify-center items-center space-y-8 lg:space-y-0 lg:space-x-4">
         {/* Skill Seeker */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,9 +42,9 @@ export default function Steps() {
             transition={{ duration: 0.6, delay: index * 0.2 }}
             className="flex flex-col items-center"
           >
-            <div className="border border-yellow-400 p-4 rounded-lg shadow-md w-32 h-32 sm:w-28 sm:h-28 flex flex-col items-center justify-center text-white">
-              <h2 className="text-lg sm:text-lg font-bold">Step {step.id}</h2>
-              <p className="text-xs sm:text-xs text-center mt-2">{step.desc}</p>
+            <div className="border border-yellow-400 p-4 rounded-lg shadow-md w-48 h-40 sm:w-44 sm:h-36 flex flex-col items-center justify-center text-white">
+              <h2 className="text-lg sm:text-base font-bold">Step {step.id}</h2>
+              <p className="text-xs sm:text-xs text-center mt-2 leading-tight">{step.desc}</p>
             </div>
           </motion.div>
         ))}
