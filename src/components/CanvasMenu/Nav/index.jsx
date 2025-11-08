@@ -54,7 +54,13 @@ export default function Index() {
 				</motion.div>
 			</div>
 			<div className="relative block w-[100vw] h-[50vh] pt-[100px]">
-				<Image alt src="/b5.jpg" objectFit="cover" width={1280} height={1080} />
+				<Image
+					src="/b5.jpg"
+					alt="Creative workspace background"
+					objectFit="cover"
+					width={1280}
+					height={1080}
+				/>
 			</div>
 		</div>
 	);
