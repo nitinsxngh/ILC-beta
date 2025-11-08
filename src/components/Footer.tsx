@@ -2,6 +2,7 @@
 import { useRef, useEffect } from 'react';
 import { usePathname } from 'next/navigation'; // 🆕 Import this hook
 import { gsap } from 'gsap';
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 export function Footer() {
     const pathname = usePathname(); // 🆕 Get current path
@@ -19,10 +20,10 @@ export function Footer() {
     ];
 
     const socialLinks = [
-        { title: "Facebook", href: "https://www.facebook.com/share/1DHS7KLwdv/" },
-        { title: "LinkedIn", href: "https://www.linkedin.com/company/integratedlearningcircle/" },
-        { title: "Instagram", href: "https://www.instagram.com/integratedlearningcircle/" },
-        { title: "Twitter", href: "https://x.com/ILCindia_2024" },
+        { title: "Facebook", href: "https://www.facebook.com/share/1DHS7KLwdv/", Icon: FaFacebookF },
+        { title: "LinkedIn", href: "https://www.linkedin.com/company/integratedlearningcircle/", Icon: FaLinkedinIn },
+        { title: "Instagram", href: "https://www.instagram.com/integratedlearningcircle/", Icon: FaInstagram },
+        { title: "Twitter", href: "https://x.com/ILCindia_2024", Icon: FaTwitter },
     ];
 
     return (
@@ -54,12 +55,24 @@ export function Footer() {
 
             {/* Bottom section */}
             <div className='w-full flex flex-col md:flex-row gap-10 justify-between mt-12'>
-                <div className='flex gap-10 uppercase'>
+                <div className='flex w-full justify-center md:justify-start gap-8 md:gap-10 uppercase'>
                     {socialLinks.map((social, index) => (
-                        <div key={index} className='relative overflow-hidden group/line cursor-pointer'>
-                            <a href={social.href} target="_blank" rel="noopener noreferrer">
-                                <h1 className='leading-none pb-2'>{social.title}</h1>
-                                <span className='block bg-white h-[2px] -translate-x-full group-hover/line:translate-x-0 group-hover/line:opacity-100 opacity-0 duration-500' />
+                        <div
+                            key={index}
+                            className='relative overflow-hidden group/line cursor-pointer flex-shrink-0'
+                        >
+                            <a
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={social.title}
+                                className='flex flex-col items-center md:items-start'
+                            >
+                                <span className='md:hidden text-2xl flex items-center justify-center w-10 h-10'>
+                                    <social.Icon />
+                                </span>
+                                <h1 className='hidden md:block leading-none pb-2'>{social.title}</h1>
+                                <span className='hidden md:block bg-white h-[2px] -translate-x-full group-hover/line:translate-x-0 group-hover/line:opacity-100 opacity-0 duration-500 w-full' />
                             </a>
                         </div>
                     ))}

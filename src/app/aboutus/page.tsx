@@ -12,7 +12,7 @@ const teamMembers = [
   {
     name: "Suvigya Tiwari",
     role: "IT Head",
-    photo: "/assets/teachers/suvigya.jpg",
+    photo: "/assets/teachers/suvigya.png",
     description:
       "Suvigya is a Technical Product Manager specializing in the intersection of artificial intelligence (AI), tech policy and compliance, UI/UX, and cloud computing. With a strong grasp of both technology and legal frameworks, he helps build scalable, user-centered, and compliant products that align innovation with business goals. His expertise in managing digital initiatives, protecting innovations, and driving strategic growth enables him to deliver impactful solutions in the evolving AI and technology landscape.",
   },
