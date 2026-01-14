@@ -1,0 +1,417 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* breakpoint */
+  --breakpoint-Xxl: 1440px; /*1440 px*/
+  --breakpoint-2xl: 1536px;
+  --breakpoint-xsm: 500px;
+
+  /* color */
+  --color-primary: #D4AF37;
+  --color-secondary: #000000;
+  --color-lightgray: #F4F8FA;
+  --color-overlay: #000A0B99;
+  --color-darkblack: #000000;
+  --color-twilliteblack: #000000;
+  --color-gray: #000000;
+
+  /* padding */
+  --spacing-35: 35rem; /*550px*/
+
+  /* text */
+  --text-28: 28px;
+  --text-56: 56px;
+
+  /* height */
+  --height-80vh: 80vh;
+  --height-70vh: 70vh;
+  --height-50vh: 50vh;
+  --height-450px: 450px;
+  --height-650px: 650px;
+  --height-750px: 750px;
+  --height-700px: 700px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .container {
+    @apply w-full max-w-[105rem] my-0 mx-auto py-0 sm:px-7 px-5;
+  }
+
+  .large-heading {
+    @apply text-6xl md:text-9xl 2xl:text-[290px] leading-none;
+  }
+
+  .blog-heading{
+    @apply text-4xl md:text-5xl xl:text-7xl;
+  }
+
+  .section-bedge {
+    @apply text-base font-medium text-white bg-secondary dark:bg-white/10;
+  }
+
+  .project-descp p{
+    @apply text-secondary/70 dark:text-white/70 pt-2;
+  }
+
+  .project-descp h4{
+    @apply  pt-5;
+  }
+
+  .project-descp h5{
+    @apply  pt-4;
+  }
+
+  .blog-content p{
+    @apply text-secondary/70 dark:text-white/70;
+  }
+
+  .blog-content h4{
+    @apply mt-5 mb-3.5;
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .swiper-wrapper {
+    -webkit-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+    position: relative;
+  }
+
+  .swiper-slide {
+    width: fit-content !important;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-gpu {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* Stacked Cards CSS-only Animation */
+  .stacked-cards-list {
+    display: grid;
+    grid-gap: 40px;
+    padding-top: 150px; /* Add padding to prevent top clipping */
+  }
+
+  .stacked-card-item {
+    position: sticky;
+    top: 150px; /* Increased to prevent clipping */
+    right: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px auto;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    transform-origin: center center; /* Ensure scaling happens from center */
+  }
+
+  .dark .stacked-card-item {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (min-width: 1024px) {
+    .stacked-card-item {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: minmax(400px, 70vh);
+    }
+  }
+
+  .stacked-card-animated {
+    /* Modern CSS Scroll-driven Animations */
+    view-timeline-name: --card;
+    view-timeline-axis: block;
+    animation-timeline: --card;
+    animation-name: stacked-card-scale;
+    animation-range: entry 90% cover 50%;
+    animation-fill-mode: both;
+    transform-origin: center center; /* Ensure scaling happens from center */
+  }
+
+  /* Fallback for browsers that don't support view-timeline */
+  @supports not (view-timeline-name: --card) {
+    .stacked-card-animated {
+      animation: none;
+      transform: scale(0.85);
+      opacity: 0.9;
+    }
+    
+    .stacked-card-item:first-child {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .stacked-card-figure {
+    position: relative;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  @media (min-width: 1024px) {
+    .stacked-card-figure {
+      grid-column: 1 / 2;
+      grid-row: 1 / -1;
+    }
+  }
+
+  .stacked-card-info {
+    grid-column: 1 / -1;
+    grid-row: 2 / -1;
+    height: 100%;
+    display: grid;
+    align-content: center;
+    padding: 40px;
+    background-color: white;
+  }
+
+  .dark .stacked-card-info {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  @media (min-width: 1024px) {
+    .stacked-card-info {
+      grid-column: 2 / -1;
+      grid-row: 1 / -1;
+    }
+  }
+
+  .stacked-card-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .stacked-card-subtitle {
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .stacked-card-excerpt {
+    margin-bottom: 24px;
+    line-height: 1.8;
+  }
+
+  .stacked-card-link {
+    display: inline-block;
+    width: max-content;
+    padding: 12px 24px;
+    text-decoration: none;
+    border: 1px solid currentColor;
+    background-color: transparent;
+    color: inherit;
+    border-radius: 9999px;
+    transition: all 0.5s ease-in-out;
+    font-weight: 500;
+  }
+
+  .stacked-card-link:hover {
+    background-color: var(--color-secondary);
+    color: white;
+    border-color: var(--color-secondary);
+  }
+
+  .dark .stacked-card-link {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .dark .stacked-card-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  @keyframes stacked-card-scale {
+    0%, 75% {
+      scale: 100%;
+    }
+    100% {
+      scale: 85%;
+    }
+  }
+
+  @keyframes stacked-card-scale-fallback {
+    from {
+      scale: 100%;
+    }
+    to {
+      scale: 85%;
+    }
+  }
+}
+
+@layer base {
+  h1 {
+    @apply text-9xl font-bold text-white;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl Xxl:text-[56px] font-bold leading-tight text-secondary dark:text-white;
+  }
+
+  h3 {
+    @apply text-28 Xxl:text-4xl font-bold text-secondary dark:text-white;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl lg:text-28 font-bold text-secondary dark:text-white;
+  }
+
+  h5 {
+    @apply text-black dark:text-white;
+  }
+
+  h6 {
+    @apply text-black dark:text-white;
+  }
+
+  p {
+    @apply text-lg font-normal leading-normal text-black dark:text-white;
+  }
+
+  /* Team Carousel Horizontal Scroll */
+  .team-carousel-wrapper {
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 80vh;
+    position: relative;
+    padding-top: 140px;
+  }
+
+  @media (min-width: 768px) {
+    .team-carousel-wrapper {
+      padding-top: 160px;
+    }
+  }
+
+  .team-carousel-container {
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 80vh;
+    position: relative;
+  }
+
+  .team-carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.75rem;
+    padding: 0 1.25rem;
+    min-height: 80vh;
+    will-change: transform;
+    align-items: flex-start;
+  }
+
+  .team-case-item {
+    width: calc(25% - 1.3125rem);
+    min-width: calc(25% - 1.3125rem);
+    flex-shrink: 0;
+    height: 100%;
+  }
+
+  .team-case-image {
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+
+  @media (max-width: 1280px) {
+    .team-case-item {
+      width: calc(33.333% - 1.1667rem);
+      min-width: calc(33.333% - 1.1667rem);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .team-case-item {
+      width: calc(50% - 0.875rem);
+      min-width: calc(50% - 0.875rem);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .team-case-item {
+      width: 100%;
+      min-width: 100%;
+    }
+  }
+
+  /* Parallax Hero Scroll Effect */
+  .parallax-container {
+    position: relative;
+    width: 100%;
+  }
+
+  .parallax-wrapper,
+  .parallax-content {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .parallax-content {
+    overflow-x: hidden;
+  }
+
+  .parallax-content .parallax-section {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .parallax-content .parallax-section-hero {
+    background-image: url("/images/paralax/cv-builder.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .parallax-image-container {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    perspective: 500px;
+    overflow: hidden;
+  }
+
+  .parallax-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
