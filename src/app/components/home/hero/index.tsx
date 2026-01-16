@@ -24,7 +24,7 @@ function HeroSection() {
 
                     {/* Content */}
                     <div className="relative z-10 container text-left">
-                        <div className="flex flex-col gap-6 Xxl:pb-20 pb-10">
+                        <div className="flex flex-col gap-8 Xxl:pb-20 pb-10">
                             <div className="flex items-start gap-2 md:gap-6">
                                 <div className="w-11 h-11 flex-shrink-0">
                                     <Image
@@ -35,16 +35,37 @@ function HeroSection() {
                                         className="animate-spin"
                                     />
                                 </div>
-                                <p className="text-white/70 max-w-md">
-                                    Build your future with <span className="text-primary">Integrated Learning Circle</span> from smart CV building and psychometric insights to practical training, career opportunities, and publication support. Where learning meets careers.
-                                </p>
+                                <div className="flex flex-col gap-4">
+                                    <h1 className="text-3xl md:text-5xl xl:text-6xl font-bold text-white">
+                                        Degrees don’t build careers. Proof does
+                                    </h1>
+                                    <p className="text-white/70 max-w-2xl">
+                                        ILC helps you stop guessing your future and start building it with real skills,
+                                        real work, and verified outcomes.
+                                    </p>
+                                </div>
                             </div>
-                            <div className="flex flex-col lg:flex-row items-start lg:items-end gap-4">
-                                <h1 className="large-heading">ILC</h1>
-                                <div>
-                                    <div className="bg-primary rounded-full p-1.5 pl-8">
-                                        <Image src={"/images/Icon/arrow-icon.svg"} alt="icon" height={52} width={52} />
-                                    </div>
+                            <div className="flex flex-col gap-4 items-start text-left">
+                                <h2 className="text-xl md:text-2xl font-semibold text-white">
+                                    Integrated Learning Circle
+                                </h2>
+                                <div className="flex flex-wrap items-center justify-start gap-4">
+                                    <a
+                                        href="https://www.youtube.com/watch?v=pZHrgIybfo8"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="bg-primary text-secondary font-bold rounded-full px-6 py-3 hover:bg-primary/90 transition-colors"
+                                    >
+                                        Watch Tutorial
+                                    </a>
+                                    <a
+                                        href="https://drive.google.com/file/d/1zonnN2mSaLPoWlE5UdcQHKuFHlISwAGB/view?usp=sharing"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="border border-white/40 text-white font-semibold rounded-full px-6 py-3 hover:border-white hover:text-white transition-colors"
+                                    >
+                                        Download Broch.
+                                    </a>
                                 </div>
                             </div>
                         </div>

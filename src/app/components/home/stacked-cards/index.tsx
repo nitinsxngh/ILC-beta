@@ -49,10 +49,10 @@ const cardData: CardData[] = [
 function StackedCards() {
 
   return (
-    <section className="stacked-cards-section relative w-full bg-lightgray dark:bg-darkblack py-20 md:py-40">
+    <section className="stacked-cards-section relative w-full bg-lightgray dark:bg-darkblack py-12 md:py-24">
       <div className="container mx-auto px-5">
         {/* Section Header */}
-        <div className="flex flex-col gap-11 mb-16 md:mb-24">
+        <div className="flex flex-col gap-8 mb-10 md:mb-14">
           <div className="flex items-center gap-4 md:gap-8">
             <span className="bg-primary py-1.5 px-2.5 text-base font-medium rounded-full dark:text-secondary">
               03
@@ -65,7 +65,9 @@ function StackedCards() {
               Our Products
             </h2>
             <p className="max-w-2xl text-secondary/70 dark:text-white/70">
-              Discover our key capabilities through an interactive exploration of what makes us unique.
+              Explore ILC products built to power careers—verified CVs, psychometric insights,
+              expert-led training, and publication support—each designed to move you from learning
+              to real-world outcomes.
             </p>
           </div>
         </div>

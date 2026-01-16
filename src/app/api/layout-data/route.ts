@@ -25,18 +25,7 @@ const MenuData = [
     path: "https://forum.ilc.limited/",
     newTab: true,
   },
-  {
-    id: 5,
-    title: "Sign in/Signup",
-    path: "https://explore.ilc.limited/",
-    newTab: true,
-  },
-  {
-    id: 6,
-    title: "Privacy Policy",
-    path: "/privacy-policy",
-    newTab: false,
-  }
+  
 ];
 
 

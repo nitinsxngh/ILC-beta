@@ -55,14 +55,14 @@ const [pricingData, setPricingData] = useState<any>(null);
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
                                 {pricingData?.data?.map((value:any, index:any) => {
                                     return (
-                                        <div key={index} className="bg-white dark:bg-lightgray/10 p-3 sm:p-5 xl:p-12 flex flex-col gap-10">
+                                        <div key={index} className="bg-white dark:bg-lightgray/10 p-3 sm:p-5 xl:p-12 flex flex-col gap-10 h-full">
                                             <div className="flex flex-col gap-5">
                                                 <div className="flex items-center gap-4">
                                                     <p className="font-medium text-xl">{value?.roleName}</p>
                                                 </div>
                                                 <p className="text-base text-secondary/70 dark:text-white/70">{value?.roleDescription}</p>
                                             </div>
-                                            <div>
+                                            <div className="mt-auto">
                                                 <Link
                                                     href={value?.signupUrl || "https://explore.ilc.limited/authentication/login"}
                                                     target="_blank"

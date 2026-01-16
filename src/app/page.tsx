@@ -8,6 +8,7 @@ import Services from "./components/home/services";
 import StackedCards from "./components/home/stacked-cards";
 import About from "./components/home/about";
 import Team from "./components/home/team";
+import EcosystemCards from "./components/home/ecosystem-cards";
 
 export const metadata: Metadata = {
     title: "ILC",
@@ -20,6 +21,7 @@ export default function Home() {
       <About/>
       <StackedCards/>
       <Podcast/>
+      <EcosystemCards/>
       <Services/>
       <Team teamdataNumber="06"/>
       <Pricing/>
