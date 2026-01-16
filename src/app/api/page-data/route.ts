@@ -262,22 +262,26 @@ const pricingData = {
         {
             id: 1,
             roleName: "STUDENT",
-            roleDescription: "Students who want real-world exposure, Digitlocker verified resume & psychometric assessment through ILC ecosystem"
+            roleDescription: "Students who want real-world exposure, Digitlocker verified resume & psychometric assessment through ILC ecosystem",
+            signupUrl: "https://explore.ilc.limited/authentication/login?role=STUDENT"
         },
         {
             id: 2,
             roleName: "STARTUP",
-            roleDescription: "Startups looking for motivated students for internships, live projects within the ILC ecosystem"
+            roleDescription: "Startups looking for motivated students for internships, live projects within the ILC ecosystem",
+            signupUrl: "https://explore.ilc.limited/authentication/login?role=STARTUP"
         },
         {
             id: 3,
             roleName: "MENTORS",
-            roleDescription: "Industry professionals with expertise & practical knowledge who want to train students through ILC ecosystem"
+            roleDescription: "Industry professionals with expertise & practical knowledge who want to train students through ILC ecosystem",
+            signupUrl: "https://explore.ilc.limited/authentication/login?role=MENTORS"
         },
         {
             id: 4,
             roleName: "PROFESSOR",
-            roleDescription: "Academic professionals who wish to contribute to student development & curriculum support"
+            roleDescription: "Academic professionals who wish to contribute to student development & curriculum support",
+            signupUrl: "https://explore.ilc.limited/authentication/login?role=PROFESSOR"
         },
     ],
     partnerLogo: [

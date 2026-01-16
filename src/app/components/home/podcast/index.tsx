@@ -63,11 +63,13 @@ function PodcastVideo({ video, index }: { video: typeof podcastVideos[0]; index:
                                     loading="lazy"
                                 />
                                 <div className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/10 transition-colors">
-                                    <div className="w-16 h-16 bg-primary/90 rounded-full flex items-center justify-center group-hover:bg-primary transition-colors">
-                                        <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M8 5v14l11-7z" />
-                                        </svg>
-                                    </div>
+                                    <svg className="w-20 h-14 drop-shadow-lg" viewBox="0 0 68 48" aria-hidden="true">
+                                        <path
+                                            d="M66.52 7.98a8.2 8.2 0 0 0-5.78-5.78C55.36 0 34 0 34 0S12.64 0 7.26 2.2a8.2 8.2 0 0 0-5.78 5.78C0 13.36 0 24 0 24s0 10.64 1.48 16.02a8.2 8.2 0 0 0 5.78 5.78C12.64 48 34 48 34 48s21.36 0 26.74-2.2a8.2 8.2 0 0 0 5.78-5.78C68 34.64 68 24 68 24s0-10.64-1.48-16.02z"
+                                            fill="#FF0000"
+                                        />
+                                        <path d="M45 24 27 14v20" fill="#FFFFFF" />
+                                    </svg>
                                 </div>
                             </div>
                         ) : (

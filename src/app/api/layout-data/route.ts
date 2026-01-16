@@ -30,6 +30,12 @@ const MenuData = [
     title: "Sign in/Signup",
     path: "https://explore.ilc.limited/",
     newTab: true,
+  },
+  {
+    id: 6,
+    title: "Privacy Policy",
+    path: "/privacy-policy",
+    newTab: false,
   }
 ];
 
@@ -89,6 +95,9 @@ const footerData = {
             { name: "Student Pool", href: "#" }
         ]
     },
+    footerLinks: [
+        { name: "Privacy Policy", href: "/privacy-policy" }
+    ],
     copyright: "© ILC copyright 2025"
 };
 

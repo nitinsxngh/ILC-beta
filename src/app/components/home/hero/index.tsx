@@ -51,13 +51,13 @@ function HeroSection() {
                     </div>
 
                     {/* DigiLocker Verified Badge - Bottom Right */}
-                    <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 z-10">
+                    <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 z-10 bg-black/40 backdrop-blur-sm rounded-2xl p-3 md:p-4 ring-1 ring-white/10 shadow-2xl">
                         <Image
                             src="/images/logo/digilocker-verified.svg"
                             alt="DigiLocker Verified"
-                            width={150}
-                            height={100}
-                            className="w-auto h-auto"
+                            width={260}
+                            height={180}
+                            className="w-40 md:w-56 lg:w-64 h-auto drop-shadow-xl"
                         />
                     </div>
                 </section>

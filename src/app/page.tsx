@@ -18,8 +18,8 @@ export default function Home() {
     <>
       <HeroSection />
       <About/>
-      <Podcast/>
       <StackedCards/>
+      <Podcast/>
       <Services/>
       <Team teamdataNumber="06"/>
       <Pricing/>

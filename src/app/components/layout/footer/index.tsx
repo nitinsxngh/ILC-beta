@@ -76,6 +76,19 @@ const Footer = () => {
                             </ul>
 
                             <div className='flex flex-col gap-4'>
+                                {footerData?.footerLinks?.length ? (
+                                    <ul className='flex flex-col gap-1.5'>
+                                        {footerData.footerLinks.map((value: any, index: any) => {
+                                            return (
+                                                <li key={index}>
+                                                    <a href={value.href} className='text-lg text-white hover:text-primary'>
+                                                        {value.name}
+                                                    </a>
+                                                </li>
+                                            )
+                                        })}
+                                    </ul>
+                                ) : null}
                                 <ul className='flex flex-col gap-1.5'>
                                     {footerData && footerData?.socialLinks?.map((value: any, index: any) => {
                                         return (
