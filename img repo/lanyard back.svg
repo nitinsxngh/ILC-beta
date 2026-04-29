@@ -1,0 +1,31 @@
+<svg width="913" height="1046" viewBox="0 0 913 1046" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g clip-path="url(#clip0_235_8391)">
+<rect width="913" height="1046" rx="64" fill="white"/>
+<g filter="url(#filter0_f_235_8391)">
+<path d="M1004 959.044C922.501 1358.24 835.292 1358.24 453.946 1358.24C-195.66 1493.13 -83.6319 773.346 -83.6319 650.282C-83.6319 527.217 191.395 1108.43 514.473 915.577C962.852 779.182 953.295 566.346 1004 959.044Z" fill="url(#paint0_linear_235_8391)"/>
+</g>
+<g style="mix-blend-mode:overlay" opacity="0.4">
+<rect width="1441.78" height="1207" transform="translate(-264 -80)" fill="url(#pattern0_235_8391)"/>
+</g>
+</g>
+<rect x="0.5" y="0.5" width="912" height="1045" rx="63.5" stroke="#E2E2E2"/>
+<defs>
+<filter id="filter0_f_235_8391" x="-261.2" y="462.8" width="1435.4" height="1082.4" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="85.1" result="effect1_foregroundBlur_235_8391"/>
+</filter>
+<pattern id="pattern0_235_8391" patternContentUnits="objectBoundingBox" width="0.00998767" height="0.0119304">
+<use xlink:href="#image0_235_8391" transform="scale(0.00055487 0.0006628)"/>
+</pattern>
+<linearGradient id="paint0_linear_235_8391" x1="-91" y1="1004" x2="1004" y2="1004" gradientUnits="userSpaceOnUse">
+<stop offset="0.0640036" stop-color="#0074F0"/>
+<stop offset="0.480769" stop-color="#69D172"/>
+<stop offset="0.914703" stop-color="#FFE646"/>
+</linearGradient>
+<clipPath id="clip0_235_8391">
+<rect width="913" height="1046" rx="64" fill="white"/>
+</clipPath>
+<image id="image0_235_8391" width="18" height="18" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAHdJREFUOBGtkQEKwDAIA/3/p7syEIyYaGkHwyXmso6Zma19P7tuy4AHcXDEkitNUSrzchlKR7ku1O3D+/jfPCrxxgxl7bnRdNjnCGKhpyVXZRnOmn0B+AxiPsAuunC3/3tGoZ2UObn044ZZ5kszQOwROBCMEP76AFxnId+SykncAAAAAElFTkSuQmCC"/>
+</defs>
+</svg>
