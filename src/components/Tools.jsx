@@ -18,7 +18,7 @@ const tabsData = [
   },
   {
     id: 'cv_builder',
-    label: 'CV Builder',
+    label: 'Digilocker Verified CV',
     title: "Your CV Should Open Doors, Not Raise Questions",
     subtitle: "Build a CV that's instantly verifiable by employers and recruiters — no calls, no doubts, no delays.",
     listTitle: 'Features',

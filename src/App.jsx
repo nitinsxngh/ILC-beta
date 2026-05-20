@@ -12,6 +12,9 @@ import Privacy from './components/Privacy';
 import Refund from './components/Refund';
 import logoEagle from '../img repo/ILC Logo Eagle.svg';
 import './index.css';
+import Poadcast from './components/Poadcast';
+import Blog from './components/Blog';
+import People from './components/People';
 
 function App() {
   const [activeToolTab, setActiveToolTab] = useState('psychometric');
@@ -119,8 +122,7 @@ function App() {
               Your Career. <br /> Verified.
             </h1>
             <p className="hero-subtext">
-              ILC is India's first unified career identity platform – built to Discover, build,
-              and launch every student and working professional into the future they deserve.
+              India’s first Career Identity Platform — where every skill you build, every milestone you cross, becomes part of one verified record that employers can trust.
             </p>
             <div className="hero-actions">
               <a className="btn-primary" href={resumeBuilderUrl}>
@@ -147,6 +149,9 @@ function App() {
       <Tools activeTab={activeToolTab} onTabChange={setActiveToolTab} />
       <MoreFeatures />
       <Testimonial />
+      <Poadcast/>
+      {/* <Blog/>
+      <People/> */}
       <FAQ />
       <CTA />
       <Footer />

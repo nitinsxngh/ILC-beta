@@ -12,7 +12,7 @@ const Steps = () => {
     {
       id: 'discover',
       title: 'Discover',
-      icon: <CircleDot className="tab-icon text-blue-500" size={24} color="#3b82f6" />,
+      icon: <img src="/eye.svg" alt="Discover Icon" className="tab-icon" sizes='20' />,
       color: 'blue',
       description: 'Psychometric assessment maps aptitude, personality, and career alignment certified osvano odists and expert counsellors co-validate.',
       points: [
@@ -24,22 +24,22 @@ const Steps = () => {
     },
     {
       id: 'build',
-      title: 'Build',
-      icon: <Blocks className="tab-icon text-green-500" size={24} color="#22c55e" />,
+        title: 'Build',
+        icon: <img src="/build.svg" alt="Build Icon" className="tab-icon" sizes='20' />,
       color: 'green',
-      description: 'Based on the career roadmap, ILC delivers targeted, industry-aligned practical training concluding with DigiLocker-verified CV',
+      description: 'Once your path is clear, ILC equips you with the skills employers actually trust — through hands-on training, expert mentorship, and a DigiLocker-verified Career Resume that makes your growth impossible to question.',
       points: [
-        'Industry-aligned training across domains',
-        'Hands on learning',
-        'DigiLocker-verified CV'
+        'Cross-domain training built for employability',
+        'Real mentorship. Real projects. Real outcomes.',
+        'Verified credentials- backed by DigiLocker'
       ]
     },
     {
       id: 'launch',
       title: 'Launch',
-      icon: <Rocket className="tab-icon text-yellow-500" size={24} color="#eab308" />,
+      icon: <img src="/launch.svg" alt="Launch Icon" className="tab-icon" sizes='20' />,
       color: 'yellow',
-      description: 'Verified candidates connected with real, structured opportunities, ILC success is directly tied to candidate outcomes.',
+      description: 'This is where your verified identity meets real opportunity — and your career finally begins.',
       points: [
         'Get placed via our corporate network',
         'International study & employment pathways',
@@ -94,7 +94,7 @@ const Steps = () => {
                       <ul className="step-points">
                         {tab.points.map((point, i) => (
                           <li key={i}>
-                            <CheckCircle2 size={16} className="text-gray-600 mr-2 flex-shrink-0 mt-1" />
+                            <CheckCircle2 size={16} className="text-gray-600 mr-3 flex-shrink-0 mt-1 " />
                             <span>{point}</span>
                           </li>
                         ))}
