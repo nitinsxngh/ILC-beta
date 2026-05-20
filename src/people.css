@@ -1,0 +1,155 @@
+/* People Section */
+
+.people-section {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem 0;
+  box-sizing: border-box;
+}
+
+.people-header {
+  text-align: start;
+  max-width: 780px;
+  margin-bottom: 2rem;
+}
+
+.people-badge {
+  display: inline-flex;
+  background: #e0f2fe;
+  color: #0284c7;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.people-title {
+  font-size: clamp(2rem, 2.3vw, 3rem);
+  font-weight: 800;
+  margin: 0;
+  color: #111827;
+  line-height: 1.05;
+}
+
+.people-description {
+  margin: 1rem 0 0;
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.75;
+  max-width: 620px;
+}
+
+.people-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.people-tab {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: #374151;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.people-tab::after {
+  content: "";
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  bottom: 0.25rem;
+  height: 2px;
+  background: transparent;
+  transition: background-color 0.25s ease, left 0.25s ease, right 0.25s ease;
+}
+
+.people-tab.active {
+  color: #111827;
+}
+
+.people-tab.active::after {
+  left: 0.8rem;
+  right: 0.8rem;
+  background: #3b82f6;
+}
+
+.people-tab:hover,
+.people-tab:focus {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.people-grid {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.people-card {
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 15px 45px rgba(15, 23, 42, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.people-card:hover {
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+}
+
+.people-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.people-card-body {
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.people-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.people-role {
+  margin: 0.45rem 0 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+@media (max-width: 1024px) {
+  .people-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .people-section {
+    padding: 2rem 1rem;
+  }
+
+  .people-tabs {
+    gap: 0.8rem;
+  }
+
+  .people-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .people-card {
+    border-radius: 20px;
+  }
+}
