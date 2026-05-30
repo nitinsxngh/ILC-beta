@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { CircleDot, Blocks, Rocket, CheckCircle2, Clock, IndianRupee } from 'lucide-react';
-
+import { CircleDot, Blocks, Rocket, CheckCircle2, Clock, IndianRupee, MapPin } from 'lucide-react';
 import blueBg from '../../img repo/blue frame elipse.svg';
 import greenBg from '../../img repo/green frame elipse.svg';
 import yellowBg from '../../img repo/yellow frame elipse.svg';
@@ -14,37 +13,59 @@ const Steps = () => {
       title: 'Discover',
       icon: <img src="/eye.svg" alt="Discover Icon" className="tab-icon" sizes='20' />,
       color: 'blue',
-      description: 'Psychometric assessment maps aptitude, personality, and career alignment certified osvano odists and expert counsellors co-validate.',
+      description: 'The biggest career decisions deserve one thing first  knowing who you are. ILC’s psychometric assessment and expert counsellors make sure you do.',
       points: [
-        'AI-powered psychometric testing',
+        'Psychometric testing',
         'One-on-one counselling sessions',
         'Identify skill gaps & best-fit pathways',
-        'Panel of psychologists'
-      ]
+        'Panel of psychologists & career counsellors'
+      ],
+      contributors:{
+        name:"Keerti Singh",
+        role:"Career Counsellor",
+        experience:"12+ years",
+        fees:"1500/session",
+        des:"I help students discover their strengths, explore career options and plan their next steps with confidence.",
+        specialization:["Career Guidance","Interview Prep"],
+      }
     },
     {
       id: 'build',
         title: 'Build',
         icon: <img src="/build.svg" alt="Build Icon" className="tab-icon" sizes='20' />,
       color: 'green',
-      description: 'Once your path is clear, ILC equips you with the skills employers actually trust — through hands-on training, expert mentorship, and a DigiLocker-verified Career Resume that makes your growth impossible to question.',
+      description: 'Once your path is clear, ILC equips you with the skills employers actually trust through hands-on training, expert mentorship, and a DigiLocker verified Career Resume that makes your growth impossible to question.',
       points: [
         'Cross-domain training built for employability',
         'Real mentorship. Real projects. Real outcomes.',
         'Verified credentials- backed by DigiLocker'
-      ]
+      ],
+      contributors:{}
     },
     {
       id: 'launch',
       title: 'Launch',
       icon: <img src="/launch.svg" alt="Launch Icon" className="tab-icon" sizes='20' />,
       color: 'yellow',
-      description: 'This is where your verified identity meets real opportunity — and your career finally begins.',
+      description: 'This is where your verified identity meets real opportunity and your career finally begins.',
       points: [
         'Get placed via our corporate network',
         'International study & employment pathways',
         'Structured placement with defined outcomes'
-      ]
+      ],
+      contributors:{
+        name:"FatherDev",
+        role:"Program Manager",
+        experience:"5+ years",
+        fees:"Banglore",
+        des: (
+          <>
+            Define and own the product vision and roadmap for the Digital Ecosyst...
+            <span className="text-blue-500"> Read more</span>
+          </>
+        ),
+        specialization:["On-Site","Full Time"]
+      } 
     }
   ];
 
@@ -94,7 +115,7 @@ const Steps = () => {
                       <ul className="step-points">
                         {tab.points.map((point, i) => (
                           <li key={i}>
-                            <CheckCircle2 size={16} className="text-gray-600 mr-3 flex-shrink-0 mt-1 " />
+                            <CheckCircle2 size={16} className="text-gray-600 flex-shrink-0 mt-1 mr-2" style={{marginRight:4}} />
                             <span>{point}</span>
                           </li>
                         ))}
@@ -110,7 +131,7 @@ const Steps = () => {
 
           <div className="steps-right">
             <div 
-              className="steps-right-bg"
+              className={`steps-right-bg  ${tabs[activeTab].id=== "build" ? "steps-right-content-positioner-for-build" : "steps-right-content-positioner"} `}
               style={{ 
                 backgroundImage: getRightBackground(tabs[activeTab].color),
                 backgroundSize: 'cover',
@@ -118,43 +139,67 @@ const Steps = () => {
                 backgroundRepeat: 'no-repeat'
               }}
             >
-              <div className="cards-stack">
+              {
+                tabs[activeTab].contributors.name ? (<div className="cards-stack">
                 <div className="stacked-card card-back-2"></div>
                 <div className="stacked-card card-back-1"></div>
                 <div className="stacked-card card-front">
-                  <div className="counsellor-profile">
+                  <div
+                    className="counsellor-profile"
+                    style={{
+                      display: 'flex',
+                      ...(tabs[activeTab].id === 'launch'
+                        ? { flexDirection: 'column', alignItems: 'flex-start', gap: '1rem' }
+                        : {}),
+                    }}
+                  >
                     <div className="counsellor-avatar">
-                      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=faces&q=80" alt="Keerti Singh" />
+                      <img src={tabs[activeTab].id=== "discover" ? "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=faces&q=80" : "/product.svg"} alt="Keerti Singh" />
                     </div>
-                    <div className="counsellor-info">
-                      <h4>Keerti Singh</h4>
-                      <p>Career Counsellor</p>
+                    <div className="counsellor-info" >
+                      <h4>{tabs[activeTab].contributors.name}</h4>
+                      <p>{tabs[activeTab].contributors.role}</p>
                     </div>
                   </div>
                   
                   <div className="counsellor-tags">
-                    <span className="tag-blue">Career Guidance</span>
-                    <span className="tag-blue-light">Interview Prep</span>
+                    <span className="tag-blue">{tabs[activeTab].contributors.specialization[0]}</span>
+                    <span className="tag-blue">{tabs[activeTab].contributors.specialization[1]}</span>
                   </div>
                   
                   <p className="counsellor-desc">
-                    I help students discover their strengths, explore career options and plan their next steps with confidence.
+                   {tabs[activeTab].contributors.des}
                   </p>
                   
                   <div className="counsellor-stats">
                     <div className="stat">
                       <Clock size={14} />
-                      <span>12+ years</span>
+                      <span>{tabs[activeTab].contributors.experience}</span>
                     </div>
                     <div className="stat">
-                      <IndianRupee size={14} />
-                      <span>1500/session</span>
+                     {
+                      tabs[activeTab].id === 'discover' ? <IndianRupee size={14} /> : <MapPin size={14} />
+                     }
+                      <span>{tabs[activeTab].contributors.fees}</span>
                     </div>
                   </div>
                   
-                  <button className="counsellor-btn">Book a session</button>
+                  <div style={{ display: 'flex', flexDirection: tabs[activeTab].id === 'launch' ? 'row' : 'column', gap: '1rem' }}>
+                    <button className="counsellor-btn">Book a session</button>
+                    {tabs[activeTab].id === 'launch' && <button className="viewDetails-btn" >View details</button>}
+                  </div>
+                  
                 </div>
-              </div>
+              </div>)
+
+              : (<div className="build-content">
+                    
+                    <img src='/CV.svg' alt="Launch Icon" className="placeholder-icon"  width="500"  aspectRatio="2:1"/>
+                    
+
+                
+                </div>)
+              }
             </div>
           </div>
         </div>

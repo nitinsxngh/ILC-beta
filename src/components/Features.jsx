@@ -10,7 +10,7 @@ const Features = () => {
           India's First Career<br />Identity Platform
         </h2>
         <p className="features-subtext">
-In a world where degrees fall short and CVs lack credibility, ILC builds a verified, lifelong Career Identity — connecting skills, achievements, and opportunities in one trusted platform.        </p>
+In a world where degrees fall short and CVs lack credibility, ILC builds a <br/> verified, lifelong Career Identity connecting skills, achievements, and <br/> opportunities in one trusted platform.      </p>
       </div>
 
       <div className="features-grid">

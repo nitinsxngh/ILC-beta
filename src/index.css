@@ -271,15 +271,15 @@ button {
   display: inline-flex;
   align-items: center;
   align-self: flex-start;
-  background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+  background: #E5F1FE;
   color: var(--primary-color);
   padding: 0.45rem 1.25rem;
-  border-radius: 9999px;
+  border-radius: 6px;
   font-weight: 600;
   font-size: 0.8rem;
   margin-bottom: 1.25rem;
   letter-spacing: 0.01em;
-  border: 1px solid rgba(11, 38, 186, 0.08);
+  /* border: 1px solid rgba(11, 38, 186, 0.08); */
 }
 
 .hero-heading {
@@ -641,18 +641,39 @@ button {
 /* Right Side - Dynamic Background */
 .steps-right {
   flex: 1.2;
+  padding: 2rem;
+ align-items: center;
+ justify-content: center;
+ display: flex;
 }
 
 .steps-right-bg {
   border-radius: 1.5rem;
-  padding: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  min-height: 500px;
+  min-height: 450px;
+  
+  aspect-ratio: 1.5/1;
   transition: background 0.5s ease;
 }
+
+.steps-right-content-positioner {
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.steps-right-content-positioner-for-build {
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center;
+  }
+
+@media (max-width: 768px) {
+  .steps-right-content-positioner {
+    padding: 2rem;
+  }
+}
+
 
 .cards-stack {
   position: relative;
@@ -756,7 +777,9 @@ button {
   color: var(--text-gray);
   line-height: 1.5;
   margin-bottom: 1.25rem;
-  flex-grow: 1;
+  padding-bottom: 8px;
+  /* flex-grow: 1; */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .counsellor-stats {
@@ -764,7 +787,6 @@ button {
   gap: 1.5rem;
   margin-bottom: 1.25rem;
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .stat {
@@ -778,7 +800,7 @@ button {
 
 .counsellor-btn {
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.5rem;
   background-color: #1f2937;
   color: white;
   border-radius: 999px;
@@ -787,8 +809,30 @@ button {
   transition: background-color var(--transition);
 }
 
+.viewDetails-btn {
+  width: 100%;
+  background-color: transparent;
+  color: #1f2937;
+  border: 2px solid #1f2937;
+  padding: 0.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.viewDetails-btn:hover {
+  background-color: #1f2937;
+  color: white;
+}
+
+
+
+
+
+
 .counsellor-btn:hover {
-  background-color: #111827;
+  background-color: #626772;
+
 }
 
 @media (max-width: 1024px) {
@@ -798,11 +842,12 @@ button {
 
   .steps-left {
     max-width: 100%;
+
   }
 
   .steps-right-bg {
     min-height: 400px;
-    padding: 3rem 1rem;
+    /* padding: 3rem 1rem; */
   }
 }
 
