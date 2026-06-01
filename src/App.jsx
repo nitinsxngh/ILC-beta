@@ -28,8 +28,7 @@ function App() {
 
   const goToToolsTab = useCallback((tabId) => {
     setActiveToolTab(tabId);
-    // Scroll after state update is scheduled
-    requestAnimationFrame(() => scrollToId('tools'));
+    requestAnimationFrame(() => scrollToId(`tools-step-${tabId}`));
   }, [scrollToId]);
 
   useEffect(() => {
@@ -122,8 +121,7 @@ function App() {
               Your Career. <br /> Verified.
             </h1>
             <p className="hero-subtext">
-              India’s first Career Identity Platform — where every skill you build, every milestone you cross, becomes part of one verified record that employers can trust.
-            </p>
+                 India’s first Career Identity Platform where every skill you build, every milestone you cross, becomes part of one verified record that employers can trust.            </p>
             <div className="hero-actions">
               <a className="btn-primary" href={resumeBuilderUrl}>
                 Get your CareerID
@@ -149,7 +147,7 @@ function App() {
       <Tools activeTab={activeToolTab} onTabChange={setActiveToolTab} />
       <MoreFeatures />
       <Testimonial />
-      <Poadcast/>
+      <Poadcast />
       {/* <Blog/>
       <People/> */}
       <FAQ />

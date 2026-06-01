@@ -43,7 +43,7 @@ const MoreFeatures = () => {
             Everything You Need To<br />Build Your Career
           </h2>
           <p className="more-features-subtext">
-            ILC provides all the tools you need to build and showcase your career — from psychometric assessments and certifications to portfolio, experience, and verified career credentials.
+            ILC provides all the tools you need to build and showcase your career — <br/> from psychometric assessments and certifications to portfolio,<br/> experience, and verified career credentials.
           </p>
         </div>
 

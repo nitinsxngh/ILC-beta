@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { CheckCircle2, CheckCircle, Clock, Fingerprint, Share2 } from 'lucide-react';
 import toolsBg from '../../img repo/iridi for tools bg.svg';
 
@@ -233,61 +233,143 @@ const RenderVisual = ({ activeId }) => {
 };
 
 const Tools = ({ activeTab, onTabChange }) => {
-  const [localActiveTab, setLocalActiveTab] = useState('psychometric');
-  const resolvedActiveTab = activeTab ?? localActiveTab;
-  const setResolvedActiveTab = onTabChange ?? setLocalActiveTab;
-  const activeData = tabsData.find(t => t.id === resolvedActiveTab);
+  const sentinelRefs = useRef([]);
+  const scrollFromTabClick = useRef(false);
+  const activeTabRef = useRef(activeTab ?? tabsData[0].id);
+  const resolvedActiveTab = activeTab ?? tabsData[0].id;
+  const setResolvedActiveTab = onTabChange ?? (() => {});
+  const activeIndex = Math.max(
+    0,
+    tabsData.findIndex((tab) => tab.id === resolvedActiveTab)
+  );
+
+  activeTabRef.current = resolvedActiveTab;
+
+  const scrollToStep = (tabId, behavior = 'smooth') => {
+    const el = document.getElementById(`tools-step-${tabId}`);
+    if (el) {
+      el.scrollIntoView({ behavior, block: 'start' });
+    }
+  };
+
+  const handleTabClick = (tabId) => {
+    scrollFromTabClick.current = true;
+    setResolvedActiveTab(tabId);
+    scrollToStep(tabId);
+    window.setTimeout(() => {
+      scrollFromTabClick.current = false;
+    }, 800);
+  };
+
+  useEffect(() => {
+    const sentinels = sentinelRefs.current.filter(Boolean);
+    if (!sentinels.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (scrollFromTabClick.current) return;
+
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visible) {
+          const tabId = visible.target.dataset.tabId;
+          if (tabId && tabId !== activeTabRef.current) {
+            setResolvedActiveTab(tabId);
+          }
+        }
+      },
+      {
+        root: null,
+        rootMargin: '-45% 0px -45% 0px',
+        threshold: [0, 0.5, 1],
+      }
+    );
+
+    sentinels.forEach((sentinel) => observer.observe(sentinel));
+    return () => observer.disconnect();
+  }, [setResolvedActiveTab]);
 
   return (
     <section className="tools-section" id="tools">
-      <div className="container">
-        <div className="tools-header-global">
-          <div className="badge-light">Core Features</div>
-          <h2 className="tools-heading">
-            The Tools That<br />Build Your Career
-          </h2>
-        </div>
+      <div
+        className="tools-scrolly-room"
+        style={{ '--tools-steps': tabsData.length }}
+      >
+        {tabsData.map((tab, index) => (
+          <div
+            key={tab.id}
+            id={`tools-step-${tab.id}`}
+            ref={(el) => { sentinelRefs.current[index] = el; }}
+            data-tab-id={tab.id}
+            className="tools-scrolly-sentinel"
+            style={{ '--step-index': index }}
+            aria-hidden="true"
+          />
+        ))}
 
-        <div className="tools-tabs">
-          {tabsData.map(tab => (
-            <button
-              key={tab.id}
-              className={`tool-tab-btn ${resolvedActiveTab === tab.id ? 'active' : ''}`}
-              onClick={() => setResolvedActiveTab(tab.id)}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
+        <div className="tools-scrolly-stage">
+          <div className="container tools-scrolly-inner">
+            <div className="tools-scrolly-header">
+              <div className="tools-header-global">
+                <div className="badge-light">Core Features</div>
+                <h2 className="tools-heading">
+                  The Tools That<br />Build Your Career
+                </h2>
+              </div>
 
-        <div 
-          className="tools-container"
-          style={{ 
-            backgroundImage: `url("${toolsBg}")`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
-          <div key={resolvedActiveTab} className="tools-left tools-panel-animate">
-            <h3 className="tool-title">{activeData.title}</h3>
-            <p className="tool-subtitle">{activeData.subtitle}</p>
+              <div className="tools-tabs">
+                {tabsData.map((tab) => (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    className={`tool-tab-btn ${resolvedActiveTab === tab.id ? 'active' : ''}`}
+                    onClick={() => handleTabClick(tab.id)}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-            <h4 className="tool-list-title">{activeData.listTitle}</h4>
-            <ul className="tool-list">
-              {activeData.points.map((point, index) => (
-                <li key={index}>
-                  <CheckCircle2 size={18} className="text-gray-500 mr-2 flex-shrink-0" />
-                  <span>{point}</span>
-                </li>
+            <div className="tools-scrolly-cards">
+              {tabsData.map((tab, index) => (
+                <article
+                  key={tab.id}
+                  className={`tools-container tools-feature-card ${index === activeIndex ? 'is-visible' : ''}`}
+                  style={{
+                    backgroundImage: `url("${toolsBg}")`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    zIndex: index + 1,
+                  }}
+                  aria-hidden={index !== activeIndex}
+                >
+                  <div className="tools-left">
+                    <h3 className="tool-title">{tab.title}</h3>
+                    <p className="tool-subtitle">{tab.subtitle}</p>
+
+                    <h4 className="tool-list-title">{tab.listTitle}</h4>
+                    <ul className="tool-list">
+                      {tab.points.map((point, pointIndex) => (
+                        <li key={pointIndex}>
+                          <CheckCircle2 size={18} className="text-gray-500 mr-2 flex-shrink-0" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <button type="button" className="btn-dark tool-btn">{tab.btnText}</button>
+                  </div>
+
+                  <div className="tools-right">
+                    <RenderVisual activeId={tab.id} />
+                  </div>
+                </article>
               ))}
-            </ul>
-
-            <button className="btn-dark tool-btn">{activeData.btnText}</button>
-          </div>
-          
-          <div key={`${resolvedActiveTab}-visual`} className="tools-right tools-panel-animate">
-            <RenderVisual activeId={resolvedActiveTab} />
+            </div>
           </div>
         </div>
       </div>
