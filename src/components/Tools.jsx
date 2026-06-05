@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { CheckCircle2, CheckCircle, Clock, Fingerprint, Share2 } from 'lucide-react';
 import toolsBg from '../../img repo/iridi for tools bg.svg';
 
@@ -23,11 +23,9 @@ const tabsData = [
     subtitle: "Build a CV that's instantly verifiable by employers and recruiters — no calls, no doubts, no delays.",
     listTitle: 'Features',
     points: [
-      'DigiLocker verified',
-      'Employer-ready format',
-      'Unique Career ID',
-      'ATS optimised',
-      'Auto-updating CV'
+      'DigiLocker verified credentials',
+      'AI generated, ATS-optimised',
+      'Blockchain secured identity',
     ],
     btnText: 'Build your CV'
   },
@@ -35,12 +33,11 @@ const tabsData = [
     id: 'career_id',
     label: 'Career ID',
     title: "The Aadhaar of Professional India",
-    subtitle: "A living, dynamic credential that is more than a CV. Authenticated by Government and trusted by employers. It grows automatically from your school to your most senior role.",
-    listTitle: 'Features',
+    // subtitle: "A living, dynamic credential that is more than a CV. Authenticated by Government and trusted by employers. It grows automatically from your school to your most senior role.",
+    // listTitle: 'Features',
     points: [
-      'One ID for your entire career journey',
-      'Verified and trusted by employers',
-      'Easy to share anywhere'
+      'Imagine carrying your whole career in a single link every degree, every achievement, every experience, verified and ready to share. That’s Career ID.',
+      'No more scattered certificates. No more outdated CVs. Just one secure, living profile that grows with you and speaks for you, before you even enter the room. Share it once. Let your work do the rest.',
     ],
     btnText: 'Get your Career ID'
   },
@@ -48,12 +45,15 @@ const tabsData = [
     id: 'career_kundli',
     label: 'Career Kundli',
     title: "Your Career Dashboard",
-    subtitle: "A structured career profile that helps you track, build, and showcase your journey in one dashboard.",
+    subtitle: "Career Kundali is the first verified, living profile that captures all of it and grows with you, every step of the way.",
     listTitle: 'Features',
     points: [
-      'Everything about your career, organized',
-      'Built for clarity, not confusion',
-      'Grows with every new milestone'
+      'Professional Snapshot — strengths, expertise, and direction',
+      'Verified Credentials — authenticated via DigiLocker',
+      'Work Experience — roles and the impact you created',
+      'Portfolio — real work, real outcomes',
+      'Testimonials — verified voices that build credibility',
+      'Dynamic Timeline — evolves as you grow'
     ],
     btnText: 'Build your Career Kundli'
   }
@@ -64,10 +64,10 @@ const RenderVisual = ({ activeId }) => {
     return (
       <div className="visual-psychometric">
         <div className="test-card">
-          <div className="test-icon bg-blue-100">🧠</div>
+          <div className="test-icon bg-blue-100">🖊️</div>
           <div className="test-info">
-            <h4>MBTI Assessment</h4>
-            <p>Personality type</p>
+            <h4>Interest Profile</h4>
+            {/* <p>Personality type</p> */}
           </div>
           <div className="status-badge success">
             <CheckCircle size={14} /> Complete
@@ -77,10 +77,10 @@ const RenderVisual = ({ activeId }) => {
           <span></span><span></span><span></span>
         </div>
         <div className="test-card">
-          <div className="test-icon bg-gray-100">📄</div>
+          <div className="test-icon bg-gray-100">📁</div>
           <div className="test-info">
-            <h4>RIASEC Profiling</h4>
-            <p>Aptitude Mapping</p>
+            <h4>Aptitude Profile</h4>
+            {/* <p>Aptitude Mapping</p> */}
           </div>
           <div className="status-badge success">
             <CheckCircle size={14} /> Complete
@@ -92,8 +92,8 @@ const RenderVisual = ({ activeId }) => {
         <div className="test-card">
           <div className="test-icon bg-blue-50">✏️</div>
           <div className="test-info">
-            <h4>Big 5 & OCEAN</h4>
-            <p>Trait analysis</p>
+            <h4>Future Orientation Profile</h4>
+            {/* <p>Trait analysis</p> */}
           </div>
           <div className="status-badge warning">
             <Clock size={14} /> In Progress
@@ -106,37 +106,11 @@ const RenderVisual = ({ activeId }) => {
   if (activeId === 'cv_builder') {
     return (
       <div className="visual-cv">
-        <div className="cv-header">
-          <div className="cv-avatar"></div>
-          <div className="cv-header-text">
-            <h4>Jane Doe</h4>
-            <p>Product Designer</p>
-          </div>
-        </div>
-        <div className="cv-body">
-          <div className="cv-col cv-left">
-            <div className="cv-block"></div>
-            <div className="cv-block"></div>
-            <div className="cv-block"></div>
-          </div>
-          <div className="cv-col cv-right">
-            <div className="cv-section-title">Experience</div>
-            <div className="cv-item">
-              <div className="cv-item-icon"></div>
-              <div className="cv-item-text">
-                <div className="cv-line w-full"></div>
-                <div className="cv-line w-3/4"></div>
-              </div>
-            </div>
-            <div className="cv-item">
-              <div className="cv-item-icon"></div>
-              <div className="cv-item-text">
-                <div className="cv-line w-full"></div>
-                <div className="cv-line w-1/2"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <img
+          src="/resume.svg"
+          alt="CV Preview"
+          className="cv-preview"
+        />
       </div>
     );
   }
@@ -145,13 +119,13 @@ const RenderVisual = ({ activeId }) => {
     return (
       <div className="visual-career-id">
         <div className="floating-icon icon-tl">
-          <Fingerprint size={24} className="text-blue-500" />
+          <img src="/fingerprint.svg" alt="Share Icon" width={24} height={24} />
         </div>
-        
+
         <div className="id-card-main">
           <div className="id-avatar">
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=faces&q=80"
+              src="/John.png"
               alt="John Doe"
             />
           </div>
@@ -161,12 +135,12 @@ const RenderVisual = ({ activeId }) => {
               <CheckCircle size={16} className="text-green-500" />
             </div>
             <p>Product Designer • New Delhi, India</p>
-            <div className="id-badge">Career ID: ILC445378</div>
+            <div className="id-badge"><span>Career ID: ILC445378</span></div>
           </div>
         </div>
-        
+
         <div className="floating-icon icon-br">
-          <Share2 size={20} className="text-green-500" />
+          <img src="/share.svg" alt="Share Icon" width={24} height={24} />
         </div>
       </div>
     );
@@ -175,56 +149,13 @@ const RenderVisual = ({ activeId }) => {
   if (activeId === 'career_kundli') {
     return (
       <div className="visual-kundli">
-        <div className="browser-header">
-          <span className="dot red"></span>
-          <span className="dot yellow"></span>
-          <span className="dot green"></span>
-          <div className="browser-bar">ilc.com</div>
-        </div>
-        <div className="browser-body">
-          <div className="kundli-grid">
-            <div className="kundli-card wide">
-              <div className="k-header">
-                <h5>Psychometric test evaluation</h5>
-                <a href="#">view report</a>
-              </div>
-              <div className="k-content">
-                <div className="k-icon">🧠</div>
-                <div className="k-text">
-                  <h6>Psychometric Profile</h6>
-                  <p>RIASEC, INTJ, Big 5, OCEAN</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="kundli-card">
-              <div className="k-header">
-                <h5>Experience</h5>
-                <a href="#">view all</a>
-              </div>
-              <div className="k-content">
-                <div className="k-icon bg-purple-100">💼</div>
-                <div className="k-text">
-                  <h6>Product Designer</h6>
-                  <p>Clockworks Inc.</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="kundli-card">
-              <div className="k-header">
-                <h5>Testimonials</h5>
-              </div>
-              <div className="k-content">
-                <div className="k-avatar"></div>
-                <div className="k-text">
-                  <h6>Keerti Singh</h6>
-                  <p>Founder at Blip St...</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+        <img
+          src="/ck-report.svg"
+          alt="CV Preview"
+          className="cv-preview"
+        />
+
       </div>
     );
   }
@@ -233,81 +164,90 @@ const RenderVisual = ({ activeId }) => {
 };
 
 const Tools = ({ activeTab, onTabChange }) => {
+
   const sentinelRefs = useRef([]);
+  const cardsContainerRef = useRef(null);
   const scrollFromTabClick = useRef(false);
-  const activeTabRef = useRef(activeTab ?? tabsData[0].id);
-  const resolvedActiveTab = activeTab ?? tabsData[0].id;
-  const setResolvedActiveTab = onTabChange ?? (() => {});
+  const [internalActiveTab, setInternalActiveTab] = useState(activeTab ?? tabsData[0].id);
+  const resolvedActiveTab = activeTab ?? internalActiveTab;
+  const setResolvedActiveTab = onTabChange ?? setInternalActiveTab;
   const activeIndex = Math.max(
     0,
     tabsData.findIndex((tab) => tab.id === resolvedActiveTab)
   );
 
-  activeTabRef.current = resolvedActiveTab;
+  useEffect(() => {
+    if (activeTab !== undefined && activeTab !== internalActiveTab) {
+      setInternalActiveTab(activeTab);
+    }
+  }, [activeTab, internalActiveTab]);
+
+  useEffect(() => {
+    const container = cardsContainerRef.current;
+    if (!container) return;
+
+    const onScroll = () => {
+      if (scrollFromTabClick.current) return;
+      const cards = Array.from(container.children);
+      if (!cards.length) return;
+
+      const center = container.scrollLeft + container.clientWidth / 2;
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      cards.forEach((card, index) => {
+        const cardCenter = card.offsetLeft + card.clientWidth / 2;
+        const distance = Math.abs(cardCenter - center);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      const tabId = tabsData[closestIndex]?.id;
+      if (tabId && tabId !== resolvedActiveTab) {
+        setResolvedActiveTab(tabId);
+      }
+    };
+
+    container.addEventListener('scroll', onScroll, { passive: true });
+    return () => container.removeEventListener('scroll', onScroll);
+  }, [resolvedActiveTab, setResolvedActiveTab]);
 
   const scrollToStep = (tabId, behavior = 'smooth') => {
     const el = document.getElementById(`tools-step-${tabId}`);
     if (el) {
-      el.scrollIntoView({ behavior, block: 'start' });
+      el.scrollIntoView({ behavior, block: 'nearest', inline: 'start' });
     }
   };
 
   const handleTabClick = (tabId) => {
     scrollFromTabClick.current = true;
     setResolvedActiveTab(tabId);
-    scrollToStep(tabId);
+    // scrollToStep(tabId);
     window.setTimeout(() => {
       scrollFromTabClick.current = false;
     }, 800);
   };
 
-  useEffect(() => {
-    const sentinels = sentinelRefs.current.filter(Boolean);
-    if (!sentinels.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (scrollFromTabClick.current) return;
-
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if (visible) {
-          const tabId = visible.target.dataset.tabId;
-          if (tabId && tabId !== activeTabRef.current) {
-            setResolvedActiveTab(tabId);
-          }
-        }
-      },
-      {
-        root: null,
-        rootMargin: '-45% 0px -45% 0px',
-        threshold: [0, 0.5, 1],
-      }
-    );
-
-    sentinels.forEach((sentinel) => observer.observe(sentinel));
-    return () => observer.disconnect();
-  }, [setResolvedActiveTab]);
 
   return (
     <section className="tools-section" id="tools">
       <div
         className="tools-scrolly-room"
-        style={{ '--tools-steps': tabsData.length }}
+      // style={{ '--tools-steps': tabsData.length }}
       >
-        {tabsData.map((tab, index) => (
+        {/* {tabsData.map((tab, index) => (
           <div
             key={tab.id}
-            id={`tools-step-${tab.id}`}
-            ref={(el) => { sentinelRefs.current[index] = el; }}
+            // id={`tools-step-${tab.id}`}
+            // ref={(el) => { sentinelRefs.current[index] = el; }}
             data-tab-id={tab.id}
             className="tools-scrolly-sentinel"
             style={{ '--step-index': index }}
             aria-hidden="true"
           />
-        ))}
+        ))} */}
 
         <div className="tools-scrolly-stage">
           <div className="container tools-scrolly-inner">
@@ -333,9 +273,10 @@ const Tools = ({ activeTab, onTabChange }) => {
               </div>
             </div>
 
-            <div className="tools-scrolly-cards">
+            <div className="tools-scrolly-cards" ref={cardsContainerRef}>
               {tabsData.map((tab, index) => (
                 <article
+                  id={`tools-step-${tab.id}`}
                   key={tab.id}
                   className={`tools-container tools-feature-card ${index === activeIndex ? 'is-visible' : ''}`}
                   style={{
@@ -348,23 +289,34 @@ const Tools = ({ activeTab, onTabChange }) => {
                   aria-hidden={index !== activeIndex}
                 >
                   <div className="tools-left">
+                    <p className="step-label" >
+                      {tab.label }
+                    </p>
                     <h3 className="tool-title">{tab.title}</h3>
-                    <p className="tool-subtitle">{tab.subtitle}</p>
-
-                    <h4 className="tool-list-title">{tab.listTitle}</h4>
+                    { tab.id !== "career_id" && <>
+                        <p className="tool-subtitle">{tab.subtitle}</p>
+                      </>  }
+                      {tab.id === 'psychometric' || tab.id === 'carrer_id' ? null : <h4 className="tool-list-title">{tab.listTitle}</h4>}
                     <ul className="tool-list">
-                      {tab.points.map((point, pointIndex) => (
-                        <li key={pointIndex}>
-                          <CheckCircle2 size={18} className="text-gray-500 mr-2 flex-shrink-0" />
-                          <span>{point}</span>
-                        </li>
-                      ))}
+                      {tab.id !== 'psychometric' ? tab.points.map((point, idx) => (
+                          <li key={idx}>
+                            {tab.id !== "career_id" && <CheckCircle2 size={16} className="text-green-500" />}
+                            <span>{point}</span>
+                          </li>
+                        )) : (
+                          <>
+                            <h4 className="tool-list-title">Grades 8-10 : Career Discovery</h4>
+                            <p className='tool-subtitle' >Understand your strengths and choose the right stream with clarity.</p>
+                            <h4 className="tool-list-title">Grades 11–12 · Career Pathway Planning</h4>
+                            <p className='tool-subtitle' >Evaluate your current path and strengthen it for the right college outcomes.</p>
+                          </>
+)}
                     </ul>
 
                     <button type="button" className="btn-dark tool-btn">{tab.btnText}</button>
                   </div>
 
-                  <div className="tools-right">
+                  <div className={`tools-right ${tab.id === 'cv_builder' || tab.id === 'career_kundli' ? 'tools-bottom-end' : 'tools-center'}`}>
                     <RenderVisual activeId={tab.id} />
                   </div>
                 </article>

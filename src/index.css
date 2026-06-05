@@ -132,7 +132,7 @@ button {
 .container {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding : 0 2.5rem;
 }
 
 /* ─── Navbar ─── */
@@ -650,7 +650,6 @@ button {
 .steps-right-bg {
   border-radius: 1.5rem;
   min-height: 450px;
-  
   aspect-ratio: 1.5/1;
   transition: background 0.5s ease;
 }
@@ -842,25 +841,35 @@ button {
 
   .steps-left {
     max-width: 100%;
-
   }
 
   .steps-right-bg {
-    min-height: 400px;
+    min-height: 450px;
     /* padding: 3rem 1rem; */
   }
 }
 
 /* ─── Tools Section ─── */
 .tools-section {
-  padding: 4rem 0 0;
+  padding: 4rem 0 10rem;
   background-color: var(--bg-color);
   scroll-margin-top: 90px;
 }
 
 .tools-scrolly-room {
   position: relative;
-  height: calc(var(--tools-steps, 4) * 100vh);
+  height: calc(var(--tools-steps, 1) * 140vh);
+}
+
+.step-label{
+  font-size: 0.8rem;
+  font-weight: 600;
+  background-color: #D9EAF8;
+  color:#0074F0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+  width: fit-content;
+  margin-bottom: 0.8rem;
 }
 
 .tools-scrolly-sentinel {
@@ -868,7 +877,7 @@ button {
   left: 0;
   width: 100%;
   height: 100vh;
-  top: calc(var(--step-index) * 100vh);
+  top: calc(var(--step-index) * 140vh);
   pointer-events: none;
   scroll-margin-top: 6rem;
 }
@@ -896,23 +905,27 @@ button {
 
 .tools-scrolly-cards {
   position: relative;
+  display: flex;
   flex: 1;
-  min-height: 0;
+  min-height: 600px;
   margin-top: 0.5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
 }
 
+
 .tools-feature-card {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(28px);
-  transition:
-    opacity 0.45s ease,
-    transform 0.45s ease,
-    visibility 0.45s;
-  pointer-events: none;
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 100%;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: none;
+  pointer-events: auto;
   overflow-y: auto;
+  scroll-snap-align: center;
 }
 
 .tools-feature-card.is-visible {
@@ -979,7 +992,7 @@ button {
 
 .tools-container {
   border-radius: 1.5rem;
-  padding: 4rem;
+  /* padding: 4rem; */
   display: flex;
   gap: 4rem;
   align-items: stretch;
@@ -994,6 +1007,9 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2cqw;
 }
 
 .tool-title {
@@ -1015,7 +1031,7 @@ button {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-dark);
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
 }
 
 .tool-list {
@@ -1048,12 +1064,28 @@ button {
 }
 
 .tools-right {
-  flex: 1.2;
+  flex: 1;
   display: flex;
+  width: 100%;
+  min-height: 100%;
+ }
+
+.tools-center{
   align-items: center;
   justify-content: center;
 }
 
+.tools-bottom-end{
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.psychometri-grade{
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+  }
+  
 @keyframes toolsPanelEnter {
   from {
     opacity: 0;
@@ -1097,6 +1129,7 @@ button {
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
+  background-color: #e2e8f0;
 }
 
 .test-info {
@@ -1154,15 +1187,15 @@ button {
 
 /* CV Visual */
 .visual-cv {
-  background: white;
-  border-radius: 1rem;
+  /* background: white;
+  border-radius: 1rem; */
   width: 100%;
   max-width: 450px;
-  height: 380px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); */
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .cv-header {
@@ -1334,13 +1367,21 @@ button {
   display: inline-block;
   font-size: 0.7rem;
   font-weight: 600;
-  color: #0284c7;
   padding: 0.25rem 0.5rem;
+
+  border: 1px solid transparent;
   border-radius: 4px;
-  border: 1px solid #bae6fd;
-  background-color: #f0f9ff;
-  max-width: 100%;
+
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(90deg, #0074F0, #69D172, #FFE646) border-box;
+
   white-space: nowrap;
+}
+.id-badge span {
+  background: linear-gradient(90deg, #0074F0, #69D172, #FFE646);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .floating-icon {
@@ -1504,13 +1545,13 @@ button {
     gap: 1.5rem;
   }
 
-  .tools-scrolly-room {
-    height: calc(var(--tools-steps, 4) * 90vh);
+ .tools-scrolly-room {
+    height: calc(var(--tools-steps, 1) * 110vh);
   }
 
   .tools-scrolly-sentinel {
-    height: 90vh;
-    top: calc(var(--step-index) * 90vh);
+    height: 150vh;
+    top: calc(var(--step-index) * 110vh);
   }
 
   .tools-scrolly-stage {
@@ -1534,6 +1575,8 @@ button {
 .more-features-section {
   padding: 6rem 0;
   background-color: var(--bg-color);
+  margin-top: 4rem;
+  scroll-margin-top: 90px;
 }
 
 .more-features-header {
