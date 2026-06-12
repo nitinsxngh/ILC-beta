@@ -3,33 +3,33 @@ import React from 'react';
 const features = [
   {
     img: 'images/1.svg',
-    title: 'e-Library',
-    desc: '1,300+ notes, expert blogs, and resources — all inside your ILC account.'
+    title: 'Psychometric Test',
+    desc: 'Insights designed for your academic stage, backed by 2026 trends and NEP 2020.'
   },
   {
     img: 'images/2.svg',
-    title: 'Expert Mentors',
-    desc: 'Guidance from 30+ real industry professionals who know how careers work.'
+    title: 'Counselling Sessions',
+    desc: 'Benefit from one-on-one sessions with trained career counsellors at every step of your journey.'
   },
   {
     img: 'images/3.svg',
     title: 'DigiLocker Verified',
-    desc: 'Every credential is government-authenticated. Zero fakes.'
+    desc: 'Every credential is government authenticated, ensuring complete authenticity.'
   },
   {
     img: 'images/4.svg',
-    title: 'Internship Placement',
-    desc: 'Structured internships matched to your profile and career goals.'
+    title: 'e-Library',
+    desc: 'Access 1,300+ notes, expert blogs, and learning resources, all within your ILC account.'
   },
   {
     img: 'images/5.svg',
-    title: 'Growth Tracking',
-    desc: 'Your Career ID updates as you grow — always showing where you are right now.'
+    title: 'Experiential Learning',
+    desc: 'Receive structured internship opportunities matched to your profile and career goals.'
   },
   {
     img: 'images/6.svg',
-    title: 'Counsellor Sessions',
-    desc: 'One-on-one sessions with trained career counsellors at every stage.'
+    title: 'Growth Tracking',
+    desc: 'Your Career ID evolves with your progress, always reflecting your current stage and achievements.'
   }
 ];
 

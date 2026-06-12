@@ -28,6 +28,86 @@ const Poadcast = () => {
         }
     }, []);
 
+
+
+    const findVideoId = (url) => {
+        const regex = /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+        const match = url.match(regex);
+        return match ? match[1] : null;
+    };
+
+    const findTitle = (videoId) => {
+        return videoId ? getYoutubeTitle(videoId) : "Podcast video";
+    }
+
+    const findThumbnail = (videoId) => {
+        return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+    }
+
+const  videos = [
+    {
+        videoId: findVideoId("https://www.youtube.com/watch?v=tpTInK3__xc"),
+        title: "Assam Speaks - Is india Listening ???" ,    
+        thumbnail: findThumbnail(findVideoId("https://www.youtube.com/watch?v=tpTInK3__xc")),
+        onClickReadNow: () => { },
+    },
+    {
+        videoId: findVideoId("https://www.youtube.com/watch?v=lzdMTJKJBQc"),
+        title: "You vs U: Why You Know Everything but Still Don’t Act | Kamal Aggarwal",    
+        thumbnail: findThumbnail(findVideoId("https://www.youtube.com/watch?v=lzdMTJKJBQc")),
+        onClickReadNow: () => { },
+    },
+     {
+        videoId: findVideoId("https://www.youtube.com/watch?v=3EtaPTFpSOk"),
+        title: "CA की Demand बढ़ेगी या AI लेगा Job? ||",    
+        thumbnail: findThumbnail(findVideoId("https://www.youtube.com/watch?v=3EtaPTFpSOk")),
+        onClickReadNow: () => { },
+    },
+    {
+        videoId: findVideoId("https://www.youtube.com/watch?v=ZbOPV-RvQQg"),
+        title: "Apki Bachpan Ki Yaadein Fake Ho Sakti Hain?Psychologist Explains | Dr. RakhiGupta",    
+        thumbnail: findThumbnail(findVideoId("https://www.youtube.com/watch?v=ZbOPV-RvQQg")),
+        onClickReadNow: () => { },
+    },
+    {
+        videoId: findVideoId("https://www.youtube.com/watch?v=uHvU1oWosEA"),
+        title: "LOAN, Job, Property - हर Problem का Solution | Advocate Interview",    
+        thumbnail: findThumbnail(findVideoId("https://www.youtube.com/watch?v=uHvU1oWosEA")),
+        onClickReadNow: () => { },
+    },
+    {
+        videoId: findVideoId("https://www.youtube.com/watch?v=Uf6_sDzw6tM"),
+        title: "IPC Section 498A – Har Married Man ko iske baare me zaroor jaanna chahiye",
+        thumbnail: findThumbnail(findVideoId("https://www.youtube.com/watch?v=Uf6_sDzw6tM")),
+        onClickReadNow: () => { },
+    },
+    {
+        videoId: findVideoId("https://www.youtube.com/watch?v=sqlY4tQrMM8"),
+        title: "Principal unfiltered | Education Mafia Exposed",
+        thumbnail: findThumbnail(findVideoId("https://www.youtube.com/watch?v=sqlY4tQrMM8")),
+        onClickReadNow: () => { },
+    },
+    {
+        videoId: findVideoId("https://www.youtube.com/watch?v=4-WBFiIgHPY"),
+        title: "Celebrities Pakde Jaate Hain Toh Kya Hota Hai? | High Profile Cases Exposed",
+        thumbnail: findThumbnail(findVideoId("https://www.youtube.com/watch?v=4-WBFiIgHPY")),
+        onClickReadNow: () => { },
+    },
+    {
+        videoId: findVideoId("https://www.youtube.com/watch?v=7dhz3XaPNbE"),
+        title: "He made Blinkit before Blinkit. Jo chahiye hota tha, woh already ready. ✨",
+        thumbnail: findThumbnail(findVideoId("https://www.youtube.com/watch?v=7dhz3XaPNbE")),
+        onClickReadNow: () => { },
+    },
+    {
+        videoId: findVideoId("https://www.youtube.com/watch?v=00a09dzjMXU"),
+        title: "From human brains to machine minds — let’s decode AI & Robotics today 🔥💡",
+        thumbnail: findThumbnail(findVideoId("https://www.youtube.com/watch?v=00a09dzjMXU")),
+        onClickReadNow: () => { },
+    }
+]
+
+
     const initPlayer = (index) => {
         const checkYT = setInterval(() => {
             if (window.YT && window.YT.Player) {
@@ -50,11 +130,11 @@ const Poadcast = () => {
     };
 
     const fetchPlaylistVideos = useCallback(async (token = "") => {
-        if (!YOUTUBE_API_KEY || !YOUTUBE_PLAYLIST_ID) {
-            setError("Missing Environment Variables: Ensure VITE_YOUTUBE_API_KEY and VITE_YOUTUBE_PLAYLIST_ID are set in your .env file and the server is restarted.");
-            setLoading(false);
-            return;
-        }
+        // if (!YOUTUBE_API_KEY || !YOUTUBE_PLAYLIST_ID) {
+        //     setError("Missing Environment Variables");
+        //     setLoading(false);
+        //     return;
+        // }
 
         if (!token) {
             setLoading(true);
@@ -69,7 +149,12 @@ const Poadcast = () => {
             const response = await fetch(apiUrl);
 
             if (!response.ok) {
-                throw new Error(`YouTube API request failed: ${response.status}`);
+                setPoadcasts(videos);
+                setLoading(false);
+                setIsFetchingNextPage(false);
+                return;
+
+                // throw new Error(`YouTube API request failed: ${response.status}`);
             }
 
             const data = await response.json();
@@ -78,7 +163,7 @@ const Poadcast = () => {
                 throw new Error("No videos returned from the YouTube playlist.");
             }
 
-            const items = data.items
+            const items = data.items ?? []
                 .filter((item) => item.snippet?.resourceId?.videoId)
                 .map((item) => {
                     const videoId = item.snippet.resourceId.videoId;
