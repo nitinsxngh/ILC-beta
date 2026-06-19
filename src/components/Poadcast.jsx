@@ -294,7 +294,7 @@ const  videos = [
                 ))}
 
                 {/* This invisible div triggers the loading of the next page when it scrolls into view */}
-                <div ref={loaderRef} style={{ minWidth: '50px', height: '10px', flexShrink: 0 }} aria-hidden="true" />
+                {/* <div ref={loaderRef} style={{ width: '1px', minWidth: '1px', height: '10px', flex: '0 0 1px' }} aria-hidden="true" /> */}
 
                 {isFetchingNextPage && (
                     <div className="poadcast-loading" style={{ flex: '0 0 auto', padding: '0 2rem', whiteSpace: 'nowrap' }}>Loading more videos…</div>

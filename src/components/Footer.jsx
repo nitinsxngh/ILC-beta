@@ -40,8 +40,10 @@ const Footer = () => {
                     LinkedIn
                   </a>
                 </li>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter/X</a></li>
+                <li><a href="https://www.facebook.com/shreya.chopra.40369">Facebook</a></li>
+                <li><a href="https://x.com/innovativeILC">Twitter/X</a></li>
+                 <li><a href="https://www.youtube.com/@ilcbyshreyachopra">YouTube</a></li>
+                 <li><a href="https://www.instagram.com/ilc.ind">Instagram</a></li>
               </ul>
             </div>
             <div className="footer-column">

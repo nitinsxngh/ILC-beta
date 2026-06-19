@@ -1,5 +1,6 @@
 import React from 'react';
 import ctaBg from '../../img repo/Ready to Take Bg Block.svg';
+import { resumeBuilderUrl } from '../config/config';
 
 const CTA = () => {
   return (
@@ -18,7 +19,10 @@ const CTA = () => {
           <h2 className="cta-heading">
             Ready To Take Your<br />CareerID?
           </h2>
-          <button className="btn-dark cta-btn">Get your CareerID</button>
+          <a className="btn-dark cta-btn" href={resumeBuilderUrl} target="_self">
+            Get your CareerID
+          </a>
+          
         </div>
       </div>
     </section>

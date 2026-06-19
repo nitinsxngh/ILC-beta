@@ -3,6 +3,7 @@ import { CircleDot, Blocks, Rocket, CheckCircle2, Clock, IndianRupee, MapPin, Pa
 import blueBg from '../../img repo/blue frame elipse.svg';
 import greenBg from '../../img repo/green frame elipse.svg';
 import yellowBg from '../../img repo/yellow frame elipse.svg';
+import { resumeBuilderUrl } from '../config/config';
 
 const Steps = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -125,8 +126,12 @@ const Steps = () => {
                 </div>
               ))}
             </div>
-
-            <button className="btn-primary steps-cta">Get your CareerID</button>
+              <a
+                href={resumeBuilderUrl}
+                target="_self"
+              >
+                <button className="btn-primary steps-cta">Get your CareerID</button>
+             </a>
           </div>
 
           <div className="steps-right">

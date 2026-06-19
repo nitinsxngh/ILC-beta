@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { CheckCircle2, CheckCircle, Clock, Fingerprint, Share2 } from 'lucide-react';
 import toolsBg from '../../img repo/iridi for tools bg.svg';
+import { resumeBuilderUrl } from '../config/config';
 
 const tabsData = [
   {
@@ -67,7 +68,6 @@ const RenderVisual = ({ activeId }) => {
           <div className="test-icon bg-blue-100">🖊️</div>
           <div className="test-info">
             <h4>Interest Profile</h4>
-            {/* <p>Personality type</p> */}
           </div>
           <div className="status-badge success">
             <CheckCircle size={14} /> Complete
@@ -80,7 +80,6 @@ const RenderVisual = ({ activeId }) => {
           <div className="test-icon bg-gray-100">📁</div>
           <div className="test-info">
             <h4>Aptitude Profile</h4>
-            {/* <p>Aptitude Mapping</p> */}
           </div>
           <div className="status-badge success">
             <CheckCircle size={14} /> Complete
@@ -93,7 +92,6 @@ const RenderVisual = ({ activeId }) => {
           <div className="test-icon bg-blue-50">✏️</div>
           <div className="test-info">
             <h4>Future Orientation Profile</h4>
-            {/* <p>Trait analysis</p> */}
           </div>
           <div className="status-badge warning">
             <Clock size={14} /> In Progress
@@ -105,7 +103,7 @@ const RenderVisual = ({ activeId }) => {
 
   if (activeId === 'cv_builder') {
     return (
-      <div className="visual-cv">
+      <div className="visual-kundli">
         <img
           src="/resume.svg"
           alt="CV Preview"
@@ -166,88 +164,80 @@ const RenderVisual = ({ activeId }) => {
 const Tools = ({ activeTab, onTabChange }) => {
 
   const sentinelRefs = useRef([]);
-  const cardsContainerRef = useRef(null);
   const scrollFromTabClick = useRef(false);
-  const [internalActiveTab, setInternalActiveTab] = useState(activeTab ?? tabsData[0].id);
-  const resolvedActiveTab = activeTab ?? internalActiveTab;
-  const setResolvedActiveTab = onTabChange ?? setInternalActiveTab;
+  const activeTabRef = useRef(activeTab ?? tabsData[0].id);
+  const resolvedActiveTab = activeTab ?? tabsData[0].id;
+  const setResolvedActiveTab = onTabChange ?? (() => { });
   const activeIndex = Math.max(
     0,
     tabsData.findIndex((tab) => tab.id === resolvedActiveTab)
   );
 
-  useEffect(() => {
-    if (activeTab !== undefined && activeTab !== internalActiveTab) {
-      setInternalActiveTab(activeTab);
-    }
-  }, [activeTab, internalActiveTab]);
-
-  useEffect(() => {
-    const container = cardsContainerRef.current;
-    if (!container) return;
-
-    const onScroll = () => {
-      if (scrollFromTabClick.current) return;
-      const cards = Array.from(container.children);
-      if (!cards.length) return;
-
-      const center = container.scrollLeft + container.clientWidth / 2;
-      let closestIndex = 0;
-      let closestDistance = Infinity;
-
-      cards.forEach((card, index) => {
-        const cardCenter = card.offsetLeft + card.clientWidth / 2;
-        const distance = Math.abs(cardCenter - center);
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestIndex = index;
-        }
-      });
-
-      const tabId = tabsData[closestIndex]?.id;
-      if (tabId && tabId !== resolvedActiveTab) {
-        setResolvedActiveTab(tabId);
-      }
-    };
-
-    container.addEventListener('scroll', onScroll, { passive: true });
-    return () => container.removeEventListener('scroll', onScroll);
-  }, [resolvedActiveTab, setResolvedActiveTab]);
+  activeTabRef.current = resolvedActiveTab;
 
   const scrollToStep = (tabId, behavior = 'smooth') => {
     const el = document.getElementById(`tools-step-${tabId}`);
     if (el) {
-      el.scrollIntoView({ behavior, block: 'nearest', inline: 'start' });
+      el.scrollIntoView({ behavior, block: 'start' });
     }
   };
 
   const handleTabClick = (tabId) => {
     scrollFromTabClick.current = true;
     setResolvedActiveTab(tabId);
-    // scrollToStep(tabId);
+    scrollToStep(tabId);
     window.setTimeout(() => {
       scrollFromTabClick.current = false;
     }, 800);
   };
 
+  useEffect(() => {
+    const sentinels = sentinelRefs.current.filter(Boolean);
+    if (!sentinels.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (scrollFromTabClick.current) return;
+
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visible) {
+          const tabId = visible.target.dataset.tabId;
+          if (tabId && tabId !== activeTabRef.current) {
+            setResolvedActiveTab(tabId);
+          }
+        }
+      },
+      {
+        root: null,
+        rootMargin: '-45% 0px -45% 0px',
+        threshold: [0, 0.5, 1],
+      }
+    );
+
+    sentinels.forEach((sentinel) => observer.observe(sentinel));
+    return () => observer.disconnect();
+  }, [setResolvedActiveTab]);
 
   return (
     <section className="tools-section" id="tools">
       <div
         className="tools-scrolly-room"
-      // style={{ '--tools-steps': tabsData.length }}
+        style={{ '--tools-steps': tabsData.length }}
       >
-        {/* {tabsData.map((tab, index) => (
+        {tabsData.map((tab, index) => (
           <div
             key={tab.id}
-            // id={`tools-step-${tab.id}`}
-            // ref={(el) => { sentinelRefs.current[index] = el; }}
+            id={`tools-step-${tab.id}`}
+            ref={(el) => { sentinelRefs.current[index] = el; }}
             data-tab-id={tab.id}
             className="tools-scrolly-sentinel"
             style={{ '--step-index': index }}
             aria-hidden="true"
           />
-        ))} */}
+        ))}
 
         <div className="tools-scrolly-stage">
           <div className="container tools-scrolly-inner">
@@ -258,28 +248,14 @@ const Tools = ({ activeTab, onTabChange }) => {
                   The Tools That<br />Build Your Career
                 </h2>
               </div>
-
-              <div className="tools-tabs">
-                {tabsData.map((tab) => (
-                  <button
-                    key={tab.id}
-                    type="button"
-                    className={`tool-tab-btn ${resolvedActiveTab === tab.id ? 'active' : ''}`}
-                    onClick={() => handleTabClick(tab.id)}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
-              </div>
             </div>
 
-            <div className="tools-scrolly-cards" ref={cardsContainerRef}>
+            <div className="tools-scrolly-cards">
               {tabsData.map((tab, index) => (
                 <article
-                  id={`tools-step-${tab.id}`}
+                  id={`tools-card-${tab.id}`}
                   key={tab.id}
-                  className={`tools-container tools-feature-card ${index === activeIndex ? 'is-visible' : ''}`}
-                  style={{
+                  className={`tools-container tools-feature-card ${index === activeIndex ? 'is-visible' : ''}`} style={{
                     backgroundImage: `url("${toolsBg}")`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
@@ -290,30 +266,33 @@ const Tools = ({ activeTab, onTabChange }) => {
                 >
                   <div className="tools-left">
                     <p className="step-label" >
-                      {tab.label }
+                      {tab.label}
                     </p>
                     <h3 className="tool-title">{tab.title}</h3>
-                    { tab.id !== "career_id" && <>
-                        <p className="tool-subtitle">{tab.subtitle}</p>
-                      </>  }
-                      {tab.id === 'psychometric' || tab.id === 'carrer_id' ? null : <h4 className="tool-list-title">{tab.listTitle}</h4>}
+                    {tab.id !== "career_id" && <>
+                      <p className="tool-subtitle">{tab.subtitle}</p>
+                    </>}
+                    {tab.id === 'psychometric' || tab.id === 'career_id' ? null : <h4 className="tool-list-title">{tab.listTitle}</h4>}
                     <ul className="tool-list">
                       {tab.id !== 'psychometric' ? tab.points.map((point, idx) => (
-                          <li key={idx}>
-                            {tab.id !== "career_id" && <CheckCircle2 size={16} className="text-green-500" />}
-                            <span>{point}</span>
-                          </li>
-                        )) : (
-                          <>
-                            <h4 className="tool-list-title">Grades 8-10 : Career Discovery</h4>
-                            <p className='tool-subtitle' >Understand your strengths and choose the right stream with clarity.</p>
-                            <h4 className="tool-list-title">Grades 11–12 · Career Pathway Planning</h4>
-                            <p className='tool-subtitle' >Evaluate your current path and strengthen it for the right college outcomes.</p>
-                          </>
-)}
+                        <li key={idx} >
+                          {tab.id !== "career_id" && <CheckCircle2 size={16} className="text-green-500" />}
+                          <p className='carrer-kundali-piont' >{point}</p>
+                        </li>
+                      )) : (
+                        <>
+                          <h4 className="psy-list-title">Grades 8-10 : Career Discovery</h4>
+                          <p className='psy-list-subtitle' >Understand your strengths and choose the right stream with clarity.</p>
+                          <h4 className="psy-list-title">Grades 11–12 · Career Pathway Planning</h4>
+                          <p className='psy-list-subtitle' >Evaluate your current path and strengthen it for the right college outcomes.</p>
+                        </>
+                      )}
                     </ul>
-
-                    <button type="button" className="btn-dark tool-btn">{tab.btnText}</button>
+                    <a href={resumeBuilderUrl} target="_self" >
+                      <button type="button" className="btn-dark tool-btn" >
+                        {tab.btnText}
+                      </button>
+                    </a>
                   </div>
 
                   <div className={`tools-right ${tab.id === 'cv_builder' || tab.id === 'career_kundli' ? 'tools-bottom-end' : 'tools-center'}`}>

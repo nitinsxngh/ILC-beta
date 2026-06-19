@@ -15,11 +15,11 @@ import './index.css';
 import Poadcast from './components/Poadcast';
 import Blog from './components/Blog';
 import People from './components/People';
+import { resumeBuilderUrl } from './config/config';
 
 function App() {
   const [activeToolTab, setActiveToolTab] = useState('psychometric');
   const [hash, setHash] = useState(() => (typeof window !== 'undefined' ? window.location.hash : ''));
-  const resumeBuilderUrl = 'https://resumebuilder.ilc.limited/register';
 
   const scrollToId = useCallback((id) => {
     const el = document.getElementById(id);
