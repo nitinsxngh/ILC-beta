@@ -245,7 +245,7 @@ const Tools = ({ activeTab, onTabChange }) => {
               <div className="tools-header-global">
                 <div className="badge-light">Core Features</div>
                 <h2 className="tools-heading">
-                  The Tools That<br />Build Your Career
+                  The Tools That Build Your Career
                 </h2>
               </div>
             </div>

@@ -952,7 +952,7 @@ button {
 }
 
 .tools-heading {
-  font-size: clamp(2.5rem, 4vw, 3rem);
+  font-size: clamp(2rem, 3vw, 2.5rem);
   line-height: 1.1;
   font-weight: 700;
   color: var(--text-dark);
