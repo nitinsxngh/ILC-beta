@@ -211,6 +211,28 @@ export default function Privacy() {
           </p>
         </section>
 
+
+        <section className="legal-section">
+          <h2>9. Assessment Results & Interpretation</h2>
+          <p>
+            The Career Discovery Assessment and other psychometric tools on the ILC platform are intended to support self-understanding, exploration, and career guidance. The following applies to all results, reports, and Career Kundli outputs generated through the platform:
+
+          </p>
+          <p>
+            Results are derived solely from a user's own responses and reflect how the user answered at the time of assessment. They describe tendencies and areas for exploration, not fixed abilities, guarantees, or predictions of future success in any field.
+            The assessments and their analysis are developed by ILC's team. A trained model is used only to assist in preparing reports, and does not independently determine a user's results.
+            ILC's assessments are not clinical, diagnostic, or psychological evaluations, and their results must not be interpreted as any form of clinical or mental-health assessment.
+            Reports are one input among many. They are not a substitute for professional career counselling, and should not be used as the sole basis for any high-stakes decision, including formal stream allocation, admission, placement, or selection. Such decisions require review by a qualified counsellor or relevant authority.
+            Where results are shared with counsellors, mentors, institutions, or partners, such sharing is governed by Sections 4 and 6 of this Policy.
+
+          </p>
+
+          <p>
+            ILC accepts no liability for decisions taken solely on the basis of assessment results without appropriate professional guidance.
+
+          </p>
+        </section>
+
         <section className="legal-section">
           <h2>Changes to This Policy</h2>
           <p>
