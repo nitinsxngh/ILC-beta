@@ -12,47 +12,31 @@ export default function Privacy() {
         <section className="legal-section">
           <h2>Introduction</h2>
           <p>
-            This document is an electronic record under the Information Technology Act, 2000 and
-            Rules made thereunder, published in accordance with Rule 3(1) of the Information
-            Technology (Intermediaries Guidelines) Rules, 2011, governing access and usage of
-            www.ilc.limited and all its sub-domains.
+            This document is an electronic record under the Information Technology Act, 2000 and Rules made thereunder, published in accordance with Rule 3(1) of the Information Technology (Intermediaries Guidelines) Rules, 2011, governing access and usage of www.ilc.limited and all its sub-domains.
           </p>
           <p>
-            Innovative ILC India Private Limited (“ILC”) is India’s first Career Identity Platform.
-            We are committed to protecting your privacy and handling your personal data responsibly.
-            By registering on or using the ILC platform, you confirm that you have read,
-            understood, and agreed to this Privacy Policy.
+            Innovative ILC India Private Limited (ILC) is India’s first Career Identity Platform. We are committed to protecting your privacy and handling your personal data responsibly. By registering on or using the ILC platform, you confirm that you have read, understood, and agreed to this Privacy Policy.
           </p>
         </section>
 
         <section className="legal-section">
           <h2>1. Information We Collect</h2>
           <p>
-            Registration on ILC requires you to share personal details including but not limited to
-            your name, date of birth, contact details, academic background, area of interest, and
-            KYC information for DigiLocker-based Career ID verification.
+            Registration on ILC requires you to share personal details including but not limited to your name, date of birth, contact details, academic background, area of interest, and KYC information for DigiLocker-based Career ID verification.
+
           </p>
           <p>
-            By accessing the platform, ILC may also automatically collect your browser type, IP
-            address, device information, pages visited, time spent, and click-stream data. Certain
-            files including cookies may be stored on your device as a result of accessing the
-            platform, to which you consent.
+           By accessing the platform, ILC may also automatically collect your browser type, IP address, device information, pages visited, time spent, and click-stream data. Certain files including cookies may be stored on your device as a result of accessing the platform, to which you consent.
           </p>
           <p>
-            When you use ILC’s career services, we additionally collect psychometric assessment
-            responses, Career Kundli outputs, skill certifications, training progress, employment
-            records, and Career ID data.
+            When you use ILC’s career services, we additionally collect psychometric assessment responses, Career Kundli outputs, skill certifications, training progress, employment records, and Career ID data.
           </p>
         </section>
 
         <section className="legal-section">
           <h2>2. Storage of Information</h2>
           <p>
-            ILC stores and processes your information on secure servers protected by physical and
-            technological security measures in accordance with the Information Technology Act,
-            2000. Our infrastructure — built on AWS S3, EC2, MongoDB, NodeJS, and Vercel — is
-            configured with industry-standard encryption and access controls. By using the
-            platform, you agree to your information being stored and processed in this manner.
+            ILC stores and processes your information on secure servers protected by physical and technological security measures in accordance with the Information Technology Act, 2000. Our infrastructure - built on AWS S3, EC2, MongoDB, NodeJS, and Vercel - is configured with industry-standard encryption and access controls. By using the platform, you agree to your information being stored and processed in this manner.
           </p>
         </section>
 
@@ -67,7 +51,7 @@ export default function Privacy() {
             <li>Match you with relevant training, mentorship, and placement opportunities</li>
             <li>Send service notifications, assessment results, and career guidance</li>
             <li>
-              Contact you with relevant offers from ILC and affiliated partners — only where you
+              Contact you with relevant offers from ILC and affiliated partners-only where you
               have consented
             </li>
             <li>Comply with applicable legal and regulatory requirements</li>
@@ -84,21 +68,21 @@ export default function Privacy() {
           <h2>4. Sharing of Information</h2>
           <p>ILC may share your information with:</p>
           <ul>
-            <li>Certified psychologists and counsellors — for assessment review and career guidance</li>
-            <li>Industry mentors — limited to data relevant to your training</li>
+            <li>Certified psychologists and counsellors - for assessment review and career guidance</li>
+            <li>Industry mentors-limited to data relevant to your training</li>
             <li>
-              Corporate and MNC partners — only your verified Career ID, and only with your explicit
+              Corporate and MNC partners-only your verified Career ID, and only with your explicit
               consent at the point of placement matching
             </li>
             <li>
-              Affiliated educational institutions and marketing partners — for relevant
+              Affiliated educational institutions and marketing partners-for relevant
               communications, where you have consented
             </li>
             <li>
-              Technology partners — AWS, MongoDB, and payment gateways, bound by confidentiality
+              Technology partners-AWS, MongoDB, and payment gateways, bound by confidentiality
               agreements
             </li>
-            <li>Government authorities — where required by law or court order</li>
+            <li>Government authorities where required by law or court order</li>
           </ul>
           <p>
             Such sharing does not create any entitlement to compensation from ILC. ILC will never
@@ -121,8 +105,8 @@ export default function Privacy() {
 
           <h3>6.1 Definition</h3>
           <p>
-            “Confidential Information” includes all information disclosed by ILC to the user —
-            whether written, oral, or digital — including but not limited to:
+            “Confidential Information” includes all information disclosed by ILC to the user -
+            whether written, oral, or digital - including but not limited to:
           </p>
           <ul>
             <li>
@@ -146,7 +130,7 @@ export default function Privacy() {
             <li>Was independently developed by the user without reference to ILC’s information</li>
             <li>Is approved for release in writing by ILC</li>
             <li>
-              Is required to be disclosed by a government, judicial, or quasi-judicial authority —
+              Is required to be disclosed by a government, judicial, or quasi-judicial authority -
               in which case the user shall notify ILC in advance where possible
             </li>
           </ul>
@@ -179,17 +163,17 @@ export default function Privacy() {
           <p>ILC implements the following security measures to protect your information:</p>
           <ul>
             <li>
-              Encryption — all data transmitted between your device and the ILC platform is
+              Encryption - all data transmitted between your device and the ILC platform is
               protected using SSL/TLS encryption protocols
             </li>
             <li>
-              Access controls — role-based access ensures only authorised personnel can access
+              Access controls - role-based access ensures only authorised personnel can access
               specific categories of user data
             </li>
-            <li>Secure infrastructure — data is stored on AWS S3 and EC2 with multi-layer security configurations</li>
-            <li>Regular audits — periodic security reviews of platform systems, data handling practices, and third-party integrations</li>
+            <li>Secure infrastructure - data is stored on AWS S3 and EC2 with multi-layer security configurations</li>
+            <li>Regular audits - periodic security reviews of platform systems, data handling practices, and third-party integrations</li>
             <li>
-              Incident response — in the event of a data breach, ILC will notify affected users and
+              Incident response - in the event of a data breach, ILC will notify affected users and
               relevant authorities within the timelines prescribed by applicable law
             </li>
           </ul>
@@ -216,21 +200,19 @@ export default function Privacy() {
           <h2>9. Assessment Results & Interpretation</h2>
           <p>
             The Career Discovery Assessment and other psychometric tools on the ILC platform are intended to support self-understanding, exploration, and career guidance. The following applies to all results, reports, and Career Kundli outputs generated through the platform:
-
           </p>
-          <p>
-            Results are derived solely from a user's own responses and reflect how the user answered at the time of assessment. They describe tendencies and areas for exploration, not fixed abilities, guarantees, or predictions of future success in any field.
-            The assessments and their analysis are developed by ILC's team. A trained model is used only to assist in preparing reports, and does not independently determine a user's results.
-            ILC's assessments are not clinical, diagnostic, or psychological evaluations, and their results must not be interpreted as any form of clinical or mental-health assessment.
-            Reports are one input among many. They are not a substitute for professional career counselling, and should not be used as the sole basis for any high-stakes decision, including formal stream allocation, admission, placement, or selection. Such decisions require review by a qualified counsellor or relevant authority.
-            Where results are shared with counsellors, mentors, institutions, or partners, such sharing is governed by Sections 4 and 6 of this Policy.
+         <ul>
+          <li>Results are derived solely from a user's own responses and reflect how the user answered at the time of assessment. They describe tendencies and areas for exploration, not fixed abilities, guarantees, or predictions of future success in any field.</li>
+          <li>The assessments and their analysis are developed by ILC's team. A trained model is used only to assist in preparing reports, and does not independently determine a user's results.</li>
+          <li>ILC's assessments are not clinical, diagnostic, or psychological evaluations, and their results must not be interpreted as any form of clinical or mental-health assessment.</li>
+          <li>Reports are one input among many. They are not a substitute for professional career counselling, and should not be used as the sole basis for any high-stakes decision, including formal stream allocation, admission, placement, or selection. Such decisions require review by a qualified counsellor or relevant authority.</li>
+          <li>Where results are shared with counsellors, mentors, institutions, or partners, such sharing is governed by Sections 4 and 6 of this Policy.</li>
+          <li>A report reflects a user's most recent responses. If an assessment is retaken, the newer report supersedes any earlier version.</li>
 
-          </p>
-
-          <p>
-            ILC accepts no liability for decisions taken solely on the basis of assessment results without appropriate professional guidance.
-
-          </p>
+         </ul>
+         <p>
+          ILC accepts no liability for decisions taken solely on the basis of assessment results without appropriate professional guidance
+         </p>
         </section>
 
         <section className="legal-section">
