@@ -8,7 +8,7 @@ const tabsData = [
     id: 'psychometric',
     label: 'Psychometric test',
     title: "Know What You're Built For",
-    subtitle: 'Science-backed assessments using RIASEC, MBTI, Big 5, and OCEAN — validated by certified doctors.',
+    subtitle: 'Science-backed assessments using RIASEC, MBTI, Big 5, and OCEAN - validated by certified doctors.',
     listTitle: 'Made for',
     points: [
       'Students of Class 8 - 10',
@@ -21,7 +21,7 @@ const tabsData = [
     id: 'cv_builder',
     label: 'Digilocker Verified CV',
     title: "Your CV Should Open Doors, Not Raise Questions",
-    subtitle: "Build a CV that's instantly verifiable by employers and recruiters — no calls, no doubts, no delays.",
+    subtitle: "Build a CV that's instantly verifiable by employers and recruiters - no calls, no doubts, no delays.",
     listTitle: 'Features',
     points: [
       'DigiLocker verified credentials',
@@ -34,8 +34,6 @@ const tabsData = [
     id: 'career_id',
     label: 'Career ID',
     title: "The Aadhaar of Professional India",
-    // subtitle: "A living, dynamic credential that is more than a CV. Authenticated by Government and trusted by employers. It grows automatically from your school to your most senior role.",
-    // listTitle: 'Features',
     points: [
       'Imagine carrying your whole career in a single link every degree, every achievement, every experience, verified and ready to share. That’s Career ID.',
       'No more scattered certificates. No more outdated CVs. Just one secure, living profile that grows with you and speaks for you, before you even enter the room. Share it once. Let your work do the rest.',
@@ -49,12 +47,12 @@ const tabsData = [
     subtitle: "Career Kundali is the first verified, living profile that captures all of it and grows with you, every step of the way.",
     listTitle: 'Features',
     points: [
-      'Professional Snapshot — strengths, expertise, and direction',
-      'Verified Credentials — authenticated via DigiLocker',
-      'Work Experience — roles and the impact you created',
-      'Portfolio — real work, real outcomes',
-      'Testimonials — verified voices that build credibility',
-      'Dynamic Timeline — evolves as you grow'
+      'Professional Snapshot - strengths, expertise, and direction',
+      'Verified Credentials - authenticated via DigiLocker',
+      'Work Experience - roles and the impact you created',
+      'Portfolio - real work, real outcomes',
+      'Testimonials - verified voices that build credibility',
+      'Dynamic Timeline - evolves as you grow'
     ],
     btnText: 'Build your Career Kundli'
   }

@@ -15,7 +15,7 @@ const Testimonial = () => {
               <Quote fill="white" size={20} className="text-white" />
             </div>
             <h3 className="testimonial-quote">
-              “Every Indian Deserves To Know What They’re Truly Capable Of – And Have Proof The World Can’t Argue With.”
+              “The most successful people aren't the ones who know all the answers, they're the ones who know themselves.”
             </h3>
             <div className="testimonial-author">
               <h4>Shreya Chopra</h4>
