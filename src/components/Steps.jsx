@@ -14,7 +14,7 @@ const Steps = () => {
       title: 'Discover',
       icon: <img src="/eye.svg" alt="Discover Icon" className="tab-icon" sizes='20' />,
       color: 'blue',
-      description: 'The biggest career decisions deserve one thing first  knowing who you are. ILC’s psychometric assessment and expert counsellors make sure you do.',
+      description: "Every career journey starts with one important discovery: you. ILC combines evidence based assessments with expert guidance to help you choose a career path that's right for you",
       points: [
         'Psychometric testing',
         'One-on-one counselling sessions',
@@ -35,11 +35,12 @@ const Steps = () => {
       title: 'Build',
       icon: <img src="/build.svg" alt="Build Icon" className="tab-icon" sizes='20' />,
       color: 'green',
-      description: 'Once your path is clear, ILC equips you with the skills employers actually trust through hands-on training, expert mentorship, and a DigiLocker verified Career Resume that makes your growth impossible to question.',
+      description:"The right direction deserves the right preparation. Industry relevant learning, immersive experiences, expert mentorship, and a DigiLocker-verified Career Resume, ILC helps you to be career ready and future focused.",
       points: [
         'Cross-domain training built for employability',
         'Real mentorship. Real projects. Real outcomes.',
-        'Verified credentials- backed by DigiLocker'
+        'Verified credentials- backed by DigiLocker',
+        'International study & employment pathways'
       ],
       contributors: {}
     },
@@ -51,11 +52,10 @@ const Steps = () => {
       description: 'This is where your verified identity meets real opportunity and your career finally begins.',
       points: [
         'Get placed via our corporate network',
-        'International study & employment pathways',
-        'Structured placement with defined outcomes'
+        'Structured placement with defined outcomes',
       ],
       contributors: {
-        name: "FatherDev",
+        name: "Keerti Singh",
         role: "Program Manager",
         experience: "5+ years",
         fees: "Banglore",

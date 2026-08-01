@@ -8,7 +8,7 @@ const tabsData = [
     id: 'psychometric',
     label: 'Psychometric test',
     title: "Know What You're Built For",
-    subtitle: 'Science-backed assessments using RIASEC, MBTI, Big 5, and OCEAN - validated by certified doctors.',
+    subtitle: 'Our psychometrically validated assessments are built on research based insights,and advanced data models to evaluate your aptitude and interests, helping you understand yourself better and choose the right career path with confidence.',
     listTitle: 'Made for',
     points: [
       'Students of Class 8 - 10',
@@ -20,8 +20,8 @@ const tabsData = [
   {
     id: 'cv_builder',
     label: 'Digilocker Verified CV',
-    title: "Your CV Should Open Doors, Not Raise Questions",
-    subtitle: "Build a CV that's instantly verifiable by employers and recruiters - no calls, no doubts, no delays.",
+    title: "Your CV Should Build Trust Instantly",
+    subtitle: "A verified CV that makes it easy for employers to validate your credentials quickly, securely, and effortlessly.",
     listTitle: 'Features',
     points: [
       'DigiLocker verified credentials',
@@ -33,10 +33,9 @@ const tabsData = [
   {
     id: 'career_id',
     label: 'Career ID',
-    title: "The Aadhaar of Professional India",
+    title: "One profile. Every milestone. ",
     points: [
-      'Imagine carrying your whole career in a single link every degree, every achievement, every experience, verified and ready to share. That’s Career ID.',
-      'No more scattered certificates. No more outdated CVs. Just one secure, living profile that grows with you and speaks for you, before you even enter the room. Share it once. Let your work do the rest.',
+      "Career ID is a secure digital profile that keeps your academic achievements, skills, certifications, internships, and work experience together in one place. As your career evolves, your profile evolves with it, giving you a verified record that's always up to date and ready whenever you need it."
     ],
     btnText: 'Get your Career ID'
   },
@@ -44,15 +43,25 @@ const tabsData = [
     id: 'career_kundli',
     label: 'Career Kundli',
     title: "Your Career Dashboard",
-    subtitle: "Career Kundali is the first verified, living profile that captures all of it and grows with you, every step of the way.",
-    listTitle: 'Features',
+    subtitle: "Career Kundli is your interactive career dashboard, bringing together strengths, verified achievements, and career milestones in one place.",
+    listTitle: "What's inside",
     points: [
-      'Professional Snapshot - strengths, expertise, and direction',
-      'Verified Credentials - authenticated via DigiLocker',
-      'Work Experience - roles and the impact you created',
-      'Portfolio - real work, real outcomes',
-      'Testimonials - verified voices that build credibility',
-      'Dynamic Timeline - evolves as you grow'
+      <>
+        <strong>• Professional Snapshot :</strong> A quick overview of your strengths,
+        interests, skills, and career direction.
+      </>,
+      <>
+        <strong>• Verified Credentials :</strong> Academic records and certifications
+        securely verified through DigiLocker.
+      </>,
+      <>
+        <strong>• Experience & Projects :</strong> A record of internships, work
+        experience, projects, and key achievements.
+      </>,
+      <>
+        <strong>• Career Timeline :</strong> A chronological view of your learning,
+        experiences, and professional milestones.
+      </>,
     ],
     btnText: 'Build your Career Kundli'
   }
@@ -274,7 +283,7 @@ const Tools = ({ activeTab, onTabChange }) => {
                     <ul className="tool-list">
                       {tab.id !== 'psychometric' ? tab.points.map((point, idx) => (
                         <li key={idx} >
-                          {tab.id !== "career_id" && <CheckCircle2 size={16} className="text-green-500" />}
+                          {/* {tab.id !== "career_id" && <CheckCircle2 size={16} className="text-green-500" />} */}
                           <p className='carrer-kundali-piont' >{point}</p>
                         </li>
                       )) : (
@@ -282,7 +291,7 @@ const Tools = ({ activeTab, onTabChange }) => {
                           <h4 className="psy-list-title">Grades 8-10 : Career Discovery</h4>
                           <p className='psy-list-subtitle' >Understand your strengths and choose the right stream with clarity.</p>
                           <h4 className="psy-list-title">Grades 11–12 · Career Pathway Planning</h4>
-                          <p className='psy-list-subtitle' >Evaluate your current path and strengthen it for the right college outcomes.</p>
+                          <p className='psy-list-subtitle' >Evaluate your current path and strengthen it for the right career outcomes.</p>
                         </>
                       )}
                     </ul>

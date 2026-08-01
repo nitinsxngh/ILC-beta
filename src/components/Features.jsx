@@ -18,7 +18,7 @@ In a world where degrees fall short and CVs lack credibility, ILC builds a <br/>
           <div className="feature-icon-wrapper">
             <Atom size={28} />
           </div>
-          <h3 className="feature-card-title">Mapped by Science,<br />Not Opinion</h3>
+          <h3 className="feature-card-title">Research Based,<br />Not Opinion</h3>
           {/* <p className="feature-card-text">
             Your career path is based on scientific assessments — personality, aptitude, and interests — validated by experts. Not a quiz, a clear roadmap.
           </p> */}
