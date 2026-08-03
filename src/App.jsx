@@ -16,6 +16,9 @@ import Poadcast from './components/Poadcast';
 import Blog from './components/Blog';
 import People from './components/People';
 import { resumeBuilderUrl } from './config/config';
+import Lanyard from './components/Landyard';
+
+
 
 function App() {
   const [activeToolTab, setActiveToolTab] = useState('psychometric');
@@ -121,7 +124,7 @@ function App() {
               Your Career. <br /> Verified.
             </h1>
             <p className="hero-subtext">
-                 India’s first Career Identity Platform where every skill you build, every milestone you cross, becomes part of one verified record that employers can trust.            </p>
+              India’s first Career Identity Platform where every skill you build, every milestone you cross, becomes part of one verified record that employers can trust.            </p>
             <div className="hero-actions">
               <a className="btn-primary" href={resumeBuilderUrl}>
                 Get your CareerID
@@ -130,11 +133,24 @@ function App() {
             </div>
           </div>
 
-          <div className="hero-right">
+          <div className="hero-right" >
+            {/* <Lanyard
+              position={[0, 0, 10]}
+              gravity={[0, -20, 0]}
+              // frontImage={`${import.meta.env.BASE_URL}ID.svg`}
+              frontImage='/images/front.png'
+              backImage="/people.png"
+              imageFit="cover"
+              // lanyardImage="/people.png"
+              lanyardWidth={1}
+              fav={100}
+
+            /> */}
             <img
               className="hero-id-svg"
               src={`${import.meta.env.BASE_URL}ID.svg`}
               alt="Career ID"
+              style={{ position: "absolute", zIndex: 0 }}
             />
           </div>
         </main>
