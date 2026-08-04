@@ -1,13 +1,14 @@
 import React from 'react';
 import footerBg from '../../img repo/footer bg.svg';
 import logoEagle from '../../img repo/ILC Logo Eagle.svg';
+import footerBg2 from '../../img repo/footerbg.png';
 
 const Footer = () => {
   return (
     <footer 
       className="footer-section"
       style={{
-        backgroundImage: `url("${footerBg}")`,
+        backgroundImage: `url("${footerBg2}")`,
         backgroundSize: 'cover',
         backgroundPosition: 'top center',
         backgroundRepeat: 'no-repeat'
