@@ -129,7 +129,9 @@ function App() {
               <a className="btn-primary" href={resumeBuilderUrl}>
                 Get your CareerID
               </a>
-              <button className="btn-secondary">How it works</button>
+              <a className="btn-secondary"  href="#how-it-works" onClick={(e) => (e.preventDefault(), scrollToId('how-it-works'))}>
+                How it works
+              </a>
             </div>
           </div>
 

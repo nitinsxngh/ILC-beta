@@ -190,8 +190,8 @@ const Steps = () => {
                     </div>
 
                     <div style={{ display: 'flex', flexDirection: tabs[activeTab].id === 'launch' ? 'row' : 'column', gap: '1rem' }}>
-                      <button className="counsellor-btn">Book a session</button>
-                      {tabs[activeTab].id === 'launch' && <button className="viewDetails-btn" >View details</button>}
+                      <button className="counsellor-btn"  ><a href={resumeBuilderUrl}>Book a session</a></button>
+                      {tabs[activeTab].id === 'launch' && <button className="viewDetails-btn" ><a href={resumeBuilderUrl} >View details</a></button>}
                     </div>
 
                   </div>
