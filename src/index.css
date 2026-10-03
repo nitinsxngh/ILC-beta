@@ -1694,9 +1694,25 @@ button {
 
 @media (max-width: 1024px) {
   .tools-ctr-feature-card {
+    position: relative;
+    inset: unset;
     flex-direction: column;
     min-height: 0;
     height: auto;
+    width: 100%;
+    min-width: unset;
+    opacity: 0;
+    visibility: hidden;
+    transform: none;
+    pointer-events: none;
+    display: none;
+  }
+
+  .tools-ctr-feature-card.is-visible {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .tools-left {
@@ -1721,7 +1737,14 @@ button {
 
   .tools-scrolly-stage {
     top: 4.5rem;
-    height: calc(100vh - 4.5rem);
+    height: auto;
+    min-height: calc(100dvh - 4.5rem);
+    overflow: hidden;
+  }
+
+  .tools-scrolly-cards {
+    position: relative;
+    height: auto;
   }
 
   .visual-study-abroad {
@@ -1775,7 +1798,7 @@ button {
     height: auto;
     width: 100%;
     min-width: unset;
-    padding: 1.5rem 1.25rem;
+    padding: 0;
     gap: 1.5rem;
     opacity: 1;
     visibility: visible;
@@ -1790,7 +1813,7 @@ button {
 
   .tools-left {
     max-width: 100%;
-    padding: 1rem 0 0 0;
+    padding: 1.5rem 1.25rem 0 1.25rem;
   }
 
   .tool-title {
@@ -1804,6 +1827,10 @@ button {
 
   .tools-right {
     min-height: 16rem;
+  }
+
+  .tools-right.tools-center {
+    padding: 0 1.25rem 1.25rem;
   }
 
   .visual-psychometric,
