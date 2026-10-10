@@ -1575,7 +1575,7 @@ button {
   background: transparent;
   border-radius: 0.75rem;
   width: 100%;
-  max-width: 480px;
+  max-width: 450px;
   height: 375;
   display: flex;
   align-items: center;
