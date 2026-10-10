@@ -3,7 +3,9 @@ import { resumeBuilderUrl } from '../config/config';
 
 export function Visual() {
   return (
-    <div className="visual-kundli">
+    <div className="visual-kundli"
+      style={{ width: 450 }}
+    >
       <img src="/resume.svg" alt="CV Preview" className="cv-preview" />
     </div>
   );
